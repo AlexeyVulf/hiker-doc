@@ -6,9 +6,9 @@ import sys
 
 sys.path.insert(0, os.path.abspath(".."))
 
-project = "Lamadava"
-copyright = "2021, Lamadava"
-author = "Lamadava"
+project = "HikerApi"
+copyright = "2021, HikerApi"
+author = "HikerApi"
 
 release = "0.1"
 version = "0.1.0"
