@@ -21,13 +21,13 @@ For example:
 
 >>> from hikerapi import Client
 >>> cl = Client(api_key="")
->>> cl.user_a1("user")
+>>> cl.user_by_username_v1("user")
 
 or
 
 >>> from hikerapi import AsyncClient
 >>> cl = AsyncClient(api_key="")
->>> await cl.user_a1("user")
+>>> await cl.user_by_username_v1("user")
 
 
 Class Methods
