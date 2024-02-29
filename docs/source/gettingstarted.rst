@@ -6,8 +6,8 @@ Getting Started
 First Steps
 ------------------------------------
 
-With Hikerapi, you have several options to use it. 
-You can handle your needs with our API `Hikerapi SaaS <https://hikerapi.com/p/894GyDoD>`_,
+With HikerApi, you have several options to use it. 
+You can handle your needs with our API `HikerApi SaaS <https://hikerapi.com/p/894GyDoD>`_,
 or use our :ref:`Python library <Python>`.
 
 .. code-block:: console
@@ -17,13 +17,13 @@ or use our :ref:`Python library <Python>`.
 Trial version
 ------------------------------------
 
-Have a trial by a following link `hikerapi SaaS <https://hikerapi.com/p/894GyDoD>`_
+Have a trial by a following link `HikerApi SaaS <https://hikerapi.com/p/894GyDoD>`_
 
 A demonstration of an example
 ------------------------------------
 
-In order to show what hikerapi brings into the table, 
-we'll walk you through an example of a Python-hikerapi usage.
+In order to show what HikerApi brings into the table, 
+we'll walk you through an example of a Python-HikerApi usage.
 
 
 .. code-block:: python
@@ -110,14 +110,14 @@ If you don't have a user_id, you can get one by doing the following.
 
 .. code-block:: python
 
-    res = cl.user_a1("v_n.www")
-    res["graphql"]["user"]["id"]
+    res = cl.user_by_username_v1("v_n.www")
+    res["pk"]
 
-or by endpoint /a1/user?username=...
+or by endpoint /v1/user/by/username?username=...
 
-`hikerapi Swagger UI <https://hikerapi.com/tokens>`_
+`HikerApi Swagger UI <https://hikerapi.com/tokens>`_
 
-https://api.hikerapi.com/a1/user?username=ronaldo
+https://api.hikerapi.com/v1/user/by/username?username=ronaldo
 
 
 What just happened?

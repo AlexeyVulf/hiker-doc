@@ -6,7 +6,7 @@ Python
 Installation
 ------------
 
-To use Hikerapi, first install it using pip:
+To use HikerApi, first install it using pip:
 
 .. code-block:: console
 

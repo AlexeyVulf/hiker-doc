@@ -1,4 +1,4 @@
-hikerapi package
+HikerApi package
 ================
 
 Submodules

@@ -5,7 +5,7 @@ except ImportError:
     def Client(*args, **kwargs):
         import sys
         print(
-            "The hikerapi client could not init because the required "
+            "The HikerApi client could not init because the required "
             "dependencies were not installed.\nMake sure you've installed "
             "everything with: pip install 'hikerapi'"
         )
