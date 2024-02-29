@@ -15,5 +15,5 @@ Contents
 .. toctree::
    gettingstarted
    python
-   status_codes
+   response_codes
    contacts
