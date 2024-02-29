@@ -1,4 +1,4 @@
-﻿hikerapi
+﻿HikerApi
 ========
 
 .. automodule:: hikerapi
