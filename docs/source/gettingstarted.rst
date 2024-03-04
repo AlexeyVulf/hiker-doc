@@ -6,8 +6,8 @@ Getting Started
 First Steps
 ------------------------------------
 
-With HikerApi, you have several options to use it. 
-You can handle your needs with our API `HikerApi SaaS <https://hikerapi.com/p/894GyDoD>`_,
+With HikerAPI, you have several options to use it. 
+You can handle your needs with our API `HikerAPI SaaS <https://hikerapi.com/p/894GyDoD>`_,
 or use our :ref:`Python library <Python>`.
 
 .. code-block:: console
@@ -17,13 +17,13 @@ or use our :ref:`Python library <Python>`.
 Trial version
 ------------------------------------
 
-Have a trial by a following link `HikerApi SaaS <https://hikerapi.com/p/894GyDoD>`_
+Have a trial by a following link `HikerAPI SaaS <https://hikerapi.com/p/894GyDoD>`_
 
 A demonstration of an example
 ------------------------------------
 
-In order to show what HikerApi brings into the table, 
-we'll walk you through an example of a Python-HikerApi usage.
+In order to show what HikerAPI brings into the table, 
+we'll walk you through an example of a Python-HikerAPI usage.
 
 
 .. code-block:: python
@@ -115,7 +115,7 @@ If you don't have a user_id, you can get one by doing the following.
 
 or by endpoint /v1/user/by/username?username=...
 
-`HikerApi Swagger UI <https://hikerapi.com/tokens>`_
+`HikerAPI Swagger UI <https://hikerapi.com/tokens>`_
 
 https://api.hikerapi.com/v1/user/by/username?username=ronaldo
 

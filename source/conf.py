@@ -2,9 +2,9 @@
 
 # -- Project information
 
-project = 'HikerApi'
-copyright = '2021, HikerApi'
-author = 'HikerApi'
+project = 'HikerAPI'
+copyright = '2021, HikerAPI'
+author = 'HikerAPI'
 
 release = '0.1'
 version = '0.1.0'

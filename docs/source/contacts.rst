@@ -1,6 +1,6 @@
 Contacting us
 ===================================
 
-Via Email `HikerApi mail <https://mail.yandex.ru/compose?mailto=support@hikerapi.com...>`_
+Via Email `HikerAPI mail <https://mail.yandex.ru/compose?mailto=support@hikerapi.com...>`_
 
-Via Telegram `HikerApi Telegram <https://t.me/hikerapi>`_
+Via Telegram `HikerAPI Telegram <https://t.me/hikerapi>`_
