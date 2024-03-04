@@ -1,4 +1,4 @@
-HikerApi
+HikerAPI
 ========
 
 .. toctree::
