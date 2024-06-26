@@ -1,34 +1,55 @@
 Response Codes
 ===================================
 
-.. list-table:: HTTP Status Codes
+.. list-table::
    :header-rows: 1
    :widths: 10 20 70
 
    * - Code
      - Description
-     - Additional Info
+     - HikerAPI Description
    * - 200
      - OK
-     - null
+     - The Request Has Succeeded
+   * - 307
+     - Temporary Redirect
+     - Temporary Redirect
+   * - 400
+     - Bad Request
+     - Bad Request
+   * - 401
+     - Unauthorized
+     - Client Unauthorized Error
+   * - 402
+     - Payment Required
+     - Payment Required
    * - 403
      - Forbidden
-     - null
+     - Login Required
    * - 404
      - Not Found
-     - null
+     - Endpoint Does Not Exists
+   * - 405
+     - Method Not Allowed
+     - Method Not Allowed
+   * - 408
+     - Requests Timeout
+     - Requests Timeout
    * - 422
      - Unprocessable Entity
-     - null
+     - Unprocessable Entity
    * - 429
      - Too Many Requests
-     - null
+     - Too Many Requests
+   * - 430
+     - Request Header Fields Too Large
+     - Request Header Fields Too Large
    * - 500
      - Internal Server Error
-     - null
+     - Internal Server Error
    * - 503
      - Service Unavailable
-     - null
+     - Service Unavailable
    * - 504
      - Gateway Timeout
-     - null
+     - Gateway Timeout
