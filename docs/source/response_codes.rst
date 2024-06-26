@@ -13,43 +13,43 @@ Response Codes
      - The Request Has Succeeded
    * - 307
      - Temporary Redirect
-     - Temporary Redirect
+     - The requested resource is temporarily available at a different URL
    * - 400
      - Bad Request
-     - Bad Request
+     - Arguments are not correctly transmitted
    * - 401
      - Unauthorized
-     - Client Unauthorized Error
+     - You forgot to add the token to the query
    * - 402
      - Payment Required
-     - Payment Required
+     - Payment is required to access HikerAPI
    * - 403
      - Forbidden
-     - Login Required
+     - The account/comment/media is private
    * - 404
      - Not Found
-     - Endpoint Does Not Exists
+     - The Account/comment/media not found
    * - 405
      - Method Not Allowed
-     - Method Not Allowed
+     - This HTTP method is not allowed for HikerAPI
    * - 408
      - Requests Timeout
-     - Requests Timeout
+     - The server waited too long for the request and closed the connection, maybe because of bad internet connection.
    * - 422
      - Unprocessable Entity
-     - Unprocessable Entity
+     - The server understands the request but cannot process it due to semantic errors
    * - 429
      - Too Many Requests
-     - Too Many Requests
+     - Your request was rejected due to exceeding the request limit
    * - 430
      - Request Header Fields Too Large
      - Request Header Fields Too Large
    * - 500
      - Internal Server Error
-     - Internal Server Error
+     - There was an internal error on the server while processing your request (request fee is not charged)
    * - 503
      - Service Unavailable
-     - Service Unavailable
+     - The server is temporarily unable to process requests due to temporary overloading (request fee is not charged)
    * - 504
      - Gateway Timeout
-     - Gateway Timeout
+     - Network delays or server access problems (request fee is not charged)
