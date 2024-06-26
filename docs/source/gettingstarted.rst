@@ -66,6 +66,8 @@ or achieve the same effect with API calls using Python requests
 Example of writing into a file.
 ------------------------------------
 
+First example
+
 .. code-block:: python
 
     import aiofiles
@@ -105,6 +107,40 @@ Example of writing into a file.
             res = await cl.user_by_id_v1(id_)
             row = create_row(res, columns)
             await writer.writerow(row)
+
+Second example
+
+.. code-block:: python
+
+    import aiofiles
+    from aiocsv import AsyncWriter
+    from hikerapi import AsyncClient
+
+    columns = [
+        "pk",
+        "username",
+        "full_name",
+        "profile_pic_url",
+        "is_verified",
+        "is_private",
+    ]
+
+    user_id = "123123"
+
+    cl = AsyncClient(token="<your_token_here>")
+
+    async with aiofiles.open("foll.csv", "a") as f:
+        writer = AsyncWriter(f)
+        await writer.writerow(columns)
+        end_cursor = None
+
+        while True:
+            followers, end_cursor = await cl.user_followers_chunk_gql(user_id=user_id, end_cursor=end_cursor)
+            for f in followers:
+                await writer.writerow(f.values())
+            if end_cursor == "" or end_cursor == None:
+                break
+
 
 If you don't have a user_id, you can get one by doing the following. 
 
