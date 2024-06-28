@@ -16,5 +16,5 @@ Contents
    gettingstarted
    python
    response_codes
-   contacts
    timeoutinfo
+   contacts
