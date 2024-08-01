@@ -27,19 +27,18 @@ Example
       "6388630183", "1320664128", "6438020799", "52027596085",
    ]
 
-   all_followers = []
    rate_limit = 11
+   url = "https://api.hikerapi.com/v2/user/followers"
+   headers = {"x-access-key": "<your_token_here>", "accept": "application/json"}
+
+   all_followers = []
    semaphore = asyncio.Semaphore(rate_limit)
 
 
    async def get_followers(user_id):
       async with semaphore:
          async with aiohttp.ClientSession() as session:
-               headers = {"x-access-key": "<your_token_here>", "accept": "application/json"}
                params = {"user_id": user_id, "page_id": ""}
-
-               url = "https://api.hikerapi.com/v2/user/followers"
-
                followers = []
 
                while True:
@@ -51,9 +50,7 @@ Example
                      if not page_id:
                            break
 
-                     print(params["page_id"])
                      params["page_id"] = page_id
-
                      await asyncio.sleep(1/rate_limit)
 
       return followers
