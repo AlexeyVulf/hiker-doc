@@ -1,7 +1,7 @@
 HikerAPI documentation
 ==========================
 
-With `HikerAPI SaaS <https://hikerapi.com/p/894GyDoD>`_ You can automate your posts, stories, direct messages, getting insights, followers, hashtags, locations (places, GEO), and much more with HikerAPI SaaS's fault-tolerant RESTful API for Instagram data.
+With `HikerAPI SaaS <https://hikerapi.com/p/894GyDoD>`_ You can getting insights, followers, hashtags, locations (places, GEO), and much more with HikerAPI SaaS's fault-tolerant RESTful API for Instagram data.
 
 We leverage the GraphQL and Mobile APIs and offer our clients a pool of proxies, a collection of devices, and our own accounts to obtain public data anonymously and private data after login from a social network.
 
