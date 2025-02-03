@@ -3,21 +3,22 @@ from typing import Any, Dict, List, Optional, TypeVar
 
 import httpx
 
-from .__version__ import __version__
+from .__version__ import __version__, __title__, __domain__
 
 
 T = TypeVar("T", bound="BaseAsyncClient")
-USER_AGENT = f"python-hikerapi/{__version__}"
+USER_AGENT = "python-%s/%s" % (__title__, __version__)
+TOKEN_NAME = "%s_TOKEN" % __title__.upper()
 
 
 class BaseClient:
     def __init__(self, token: Optional[str] = None, timeout: Optional[float] = 10):
         if token is None:
-            token = os.getenv("HIKERAPI_TOKEN")
+            token = os.getenv(TOKEN_NAME)
         assert (
             token is not None
-        ), "Token not found. Use Client(token='<token>') or set env HIKERAPI_TOKEN=<token>"
-        self._url = "https://api.hikerapi.com{}"
+        ), f"Token not found. Use Client(token='<token>') or set env {TOKEN_NAME}=<token>"
+        self._url = f"https://{__domain__}"
         self._token = token
         self._timeout = timeout
         self._headers = {
@@ -28,25 +29,34 @@ class BaseClient:
 
 
 class BaseSyncClient(BaseClient):
+    def __init__(self, token: Optional[str] = None, timeout: Optional[float] = 10):
+        super().__init__(token=token, timeout=timeout)
+        self._client = httpx.Client(base_url=self._url, timeout=self._timeout)
+        self._client.headers.update(self._headers)
+
     def _request(
         self,
         method: str,
         path: str,
         params: Optional[Dict] = None,
         data: Optional[Dict] = None,
+        json: Optional[Dict] = None,
+        headers: Optional[Dict] = None,
     ) -> Dict:
-        url = self._url.format(path)
         if params:
             params = {k: v for k, v in params.items() if v}
-        resp = httpx.request(
+        resp = self._client.request(
             method,
-            url,
-            headers=self._headers,
+            path,
+            headers=self._headers | (headers or {}),
             params=params,
             data=data,
+            json=json,
             timeout=self._timeout,
         )
-        return resp.json()
+        if "json" in resp.headers.get("content-type", "").lower():
+            return resp.json()
+        return resp.content
 
     def _paging_request(
         self,
@@ -56,6 +66,7 @@ class BaseSyncClient(BaseClient):
         container: Optional[List[Dict]] = None,
         page_key: str = "page_id",
         max_requests: Optional[int] = None,
+        skip_duplicates: bool = True,
     ) -> List[Dict]:
         if params is None:
             params = {}
@@ -63,6 +74,7 @@ class BaseSyncClient(BaseClient):
             container = []
         work_count = 0
         request_count = 0
+        pks = set()
         while True:
             res = self._request("GET", path, params=params)
             request_count += 1
@@ -74,6 +86,15 @@ class BaseSyncClient(BaseClient):
             if count is not None:
                 rest = count - work_count
                 items = items[:rest]
+            if skip_duplicates:
+                items2 = []
+                for item in items:
+                    pk = item["pk"]
+                    if pk in pks:
+                        continue
+                    items2.append(item)
+                    pks.add(pk)
+                items = items2
             container.extend(items)
             work_count += len(items)
             if not npid:
@@ -89,7 +110,8 @@ class BaseSyncClient(BaseClient):
 class BaseAsyncClient(BaseClient):
     def __init__(self, token: Optional[str] = None, timeout: Optional[float] = 10):
         super().__init__(token=token, timeout=timeout)
-        self._client = httpx.AsyncClient()
+        self._client = httpx.AsyncClient(base_url=self._url, timeout=self._timeout)
+        self._client.headers.update(self._headers)
 
     async def _request(
         self,
@@ -97,19 +119,23 @@ class BaseAsyncClient(BaseClient):
         path: str,
         params: Optional[Dict] = None,
         data: Optional[Dict] = None,
+        json: Optional[Dict] = None,
+        headers: Optional[Dict] = None,
     ) -> Dict:
-        url = self._url.format(path)
         if params:
             params = {k: v for k, v in params.items() if v}
         resp = await self._client.request(
             method,
-            url,
-            headers=self._headers,
+            path,
+            headers=self._headers | (headers or {}),
             params=params,
             data=data,
+            json=json,
             timeout=self._timeout,
         )
-        return resp.json()
+        if "json" in resp.headers.get("content-type", "").lower():
+            return resp.json()
+        return resp.content
 
     async def _paging_request(
         self,
@@ -119,6 +145,7 @@ class BaseAsyncClient(BaseClient):
         container: Optional[List[Dict]] = None,
         page_key: str = "page_id",
         max_requests: Optional[int] = None,
+        skip_duplicates: bool = True,
     ) -> List[Dict]:
         if params is None:
             params = {}
@@ -126,6 +153,7 @@ class BaseAsyncClient(BaseClient):
             container = []
         work_count = 0
         request_count = 0
+        pks = set()
         while True:
             res = await self._request("GET", path, params=params)
             request_count += 1
@@ -137,6 +165,15 @@ class BaseAsyncClient(BaseClient):
             if count is not None:
                 rest = count - work_count
                 items = items[:rest]
+            if skip_duplicates:
+                items2 = []
+                for item in items:
+                    pk = item["pk"]
+                    if pk in pks:
+                        continue
+                    items2.append(item)
+                    pks.add(pk)
+                items = items2
             container.extend(items)
             work_count += len(items)
             if not npid:
