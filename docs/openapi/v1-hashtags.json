@@ -220,86 +220,6 @@
         "required": false
       }
     },
-    "/v1/hashtag/medias/top/recent/chunk": {
-      "get": {
-        "summary": "Hashtag Medias Top Recent Chunk",
-        "description": "Get hashtag chunk of recent medias. Returns a list of Media objects.",
-        "operationId": "hashtag_medias_top_recent_chunk_v1_hashtag_medias_top_recent_chunk_get",
-        "parameters": [
-          {
-            "name": "name",
-            "in": "query",
-            "required": true,
-            "schema": {
-              "type": "string",
-              "description": "Please make sure to use a clean hashtag without any special symbols. \n\n**Good one**: love, sea, dog, 공구 \n\n**Bad one**: #dog, sea_., tanjung.., #공구. ",
-              "title": "Name"
-            },
-            "description": "Please make sure to use a clean hashtag without any special symbols. \n\n**Good one**: love, sea, dog, 공구 \n\n**Bad one**: #dog, sea_., tanjung.., #공구. "
-          },
-          {
-            "name": "max_id",
-            "in": "query",
-            "required": false,
-            "schema": {
-              "type": "string",
-              "title": "Max Id"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Successful Response",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "array",
-                  "prefixItems": [
-                    {
-                      "type": "array",
-                      "items": {
-                        "$ref": "#/components/schemas/Media"
-                      }
-                    },
-                    {
-                      "anyOf": [
-                        {
-                          "type": "string"
-                        },
-                        {
-                          "type": "null"
-                        }
-                      ]
-                    }
-                  ],
-                  "minItems": 2,
-                  "maxItems": 2,
-                  "title": "Response Hashtag Medias Top Recent Chunk V1 Hashtag Medias Top Recent Chunk Get"
-                }
-              }
-            }
-          },
-          "422": {
-            "description": "Validation Error",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/HTTPValidationError"
-                }
-              }
-            }
-          }
-        },
-        "x-codeSamples": [
-          {
-            "lang": "Python",
-            "source": "from hikerapi import Client\n\ncl = Client(<ACCESS_KEY>)\nres = await cl.hashtag_medias_recent_chunk_v1(name=\"love\", max_id=None)\n",
-            "label": "Python"
-          }
-        ],
-        "required": false
-      }
-    },
     "/v1/hashtag/medias/clips": {
       "get": {
         "summary": "Use /v1/hashtag/medias/clips/chunk or /v2/hashtag/medias/clips instead",
@@ -570,6 +490,87 @@
           {
             "lang": "Python",
             "source": "from hikerapi import Client\n\ncl = Client(<ACCESS_KEY>)\nres = await cl.hashtag_medias_top_v1(name=\"love\", amount=10)\n",
+            "label": "Python"
+          }
+        ],
+        "required": false
+      }
+    },
+    "/v1/hashtag/medias/top/recent/chunk": {
+      "get": {
+        "summary": "Use /v1/hashtag/medias/top/chunk or /v2/hashtag/medias/top instead",
+        "description": "Get hashtag chunk of recent medias. Returns a list of Media objects.",
+        "operationId": "hashtag_medias_top_recent_chunk_v1_hashtag_medias_top_recent_chunk_get",
+        "deprecated": true,
+        "parameters": [
+          {
+            "name": "name",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "description": "Please make sure to use a clean hashtag without any special symbols. \n\n**Good one**: love, sea, dog, 공구 \n\n**Bad one**: #dog, sea_., tanjung.., #공구. ",
+              "title": "Name"
+            },
+            "description": "Please make sure to use a clean hashtag without any special symbols. \n\n**Good one**: love, sea, dog, 공구 \n\n**Bad one**: #dog, sea_., tanjung.., #공구. "
+          },
+          {
+            "name": "max_id",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "title": "Max Id"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "prefixItems": [
+                    {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/Media"
+                      }
+                    },
+                    {
+                      "anyOf": [
+                        {
+                          "type": "string"
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ]
+                    }
+                  ],
+                  "minItems": 2,
+                  "maxItems": 2,
+                  "title": "Response Hashtag Medias Top Recent Chunk V1 Hashtag Medias Top Recent Chunk Get"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        },
+        "x-codeSamples": [
+          {
+            "lang": "Python",
+            "source": "from hikerapi import Client\n\ncl = Client(<ACCESS_KEY>)\nres = await cl.hashtag_medias_recent_chunk_v1(name=\"love\", max_id=None)\n",
             "label": "Python"
           }
         ],
@@ -1299,6 +1300,18 @@
               }
             ],
             "title": "Is Verified"
+          },
+          "account_badges": {
+            "anyOf": [
+              {
+                "items": {},
+                "type": "array"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Account Badges"
           }
         },
         "type": "object",

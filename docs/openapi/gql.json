@@ -2738,6 +2738,18 @@
               }
             ],
             "title": "Is Verified"
+          },
+          "account_badges": {
+            "anyOf": [
+              {
+                "items": {},
+                "type": "array"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Account Badges"
           }
         },
         "type": "object",
@@ -2839,6 +2851,18 @@
               }
             ],
             "title": "Is Verified"
+          },
+          "account_badges": {
+            "anyOf": [
+              {
+                "items": {},
+                "type": "array"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Account Badges"
           },
           "reel": {
             "$ref": "#/components/schemas/UserReel"

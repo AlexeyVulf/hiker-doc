@@ -19,6 +19,24 @@
               "type": "string",
               "title": "Username"
             }
+          },
+          {
+            "name": "safe_int",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "boolean"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "Convert all big integers to strings",
+              "title": "Safe Int"
+            },
+            "description": "Convert all big integers to strings"
           }
         ],
         "responses": {
@@ -203,6 +221,24 @@
               "type": "string",
               "title": "Id"
             }
+          },
+          {
+            "name": "safe_int",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "boolean"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "Convert all big integers to strings",
+              "title": "Safe Int"
+            },
+            "description": "Convert all big integers to strings"
           }
         ],
         "responses": {
@@ -298,6 +334,24 @@
               "title": "Page Id"
             },
             "description": "Use value of field `next_page_id` from response for getting next page"
+          },
+          {
+            "name": "safe_int",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "boolean"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "Convert all big integers to strings",
+              "title": "Safe Int"
+            },
+            "description": "Convert all big integers to strings"
           }
         ],
         "responses": {
@@ -361,6 +415,24 @@
               "title": "Page Id"
             },
             "description": "Use value of field `next_page_id` from response for getting next page"
+          },
+          {
+            "name": "safe_int",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "boolean"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "Convert all big integers to strings",
+              "title": "Safe Int"
+            },
+            "description": "Convert all big integers to strings"
           }
         ],
         "responses": {
@@ -609,6 +681,24 @@
               "title": "Page Id"
             },
             "description": "Use value of field `next_page_id` from response for getting next page"
+          },
+          {
+            "name": "safe_int",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "boolean"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "Convert all big integers to strings",
+              "title": "Safe Int"
+            },
+            "description": "Convert all big integers to strings"
           }
         ],
         "responses": {
@@ -771,6 +861,24 @@
               "title": "Force"
             },
             "description": "Skip account privacy check"
+          },
+          {
+            "name": "safe_int",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "boolean"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "Convert all big integers to strings",
+              "title": "Safe Int"
+            },
+            "description": "Convert all big integers to strings"
           }
         ],
         "responses": {
@@ -861,6 +969,24 @@
               "title": "Force"
             },
             "description": "Skip account privacy check"
+          },
+          {
+            "name": "safe_int",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "boolean"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "Convert all big integers to strings",
+              "title": "Safe Int"
+            },
+            "description": "Convert all big integers to strings"
           }
         ],
         "responses": {
@@ -923,6 +1049,24 @@
               "type": "string",
               "title": "Username"
             }
+          },
+          {
+            "name": "safe_int",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "boolean"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "Convert all big integers to strings",
+              "title": "Safe Int"
+            },
+            "description": "Convert all big integers to strings"
           }
         ],
         "responses": {
@@ -1003,6 +1147,24 @@
               "type": "string",
               "title": "Id"
             }
+          },
+          {
+            "name": "safe_int",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "boolean"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "Convert all big integers to strings",
+              "title": "Safe Int"
+            },
+            "description": "Convert all big integers to strings"
           }
         ],
         "responses": {
@@ -1093,6 +1255,24 @@
               "default": false,
               "title": "Expand Suggestion"
             }
+          },
+          {
+            "name": "safe_int",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "boolean"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "Convert all big integers to strings",
+              "title": "Safe Int"
+            },
+            "description": "Convert all big integers to strings"
           }
         ],
         "responses": {
@@ -1139,6 +1319,24 @@
               "type": "string",
               "title": "User Id"
             }
+          },
+          {
+            "name": "safe_int",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "boolean"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "Convert all big integers to strings",
+              "title": "Safe Int"
+            },
+            "description": "Convert all big integers to strings"
           }
         ],
         "responses": {

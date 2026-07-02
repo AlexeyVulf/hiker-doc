@@ -16,6 +16,7 @@ Get highlight object by id. Returns a Highlight object.
 | Parameter | Type | Required | Description |
 |-----------|------|----------|-------------|
 | `id` | string | Yes | Id |
+| `safe_int` | boolean | No | Convert all big integers to strings |
 
 === "curl"
 

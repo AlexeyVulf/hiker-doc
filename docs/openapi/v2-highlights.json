@@ -19,6 +19,24 @@
               "type": "string",
               "title": "Id"
             }
+          },
+          {
+            "name": "safe_int",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "boolean"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "Convert all big integers to strings",
+              "title": "Safe Int"
+            },
+            "description": "Convert all big integers to strings"
           }
         ],
         "responses": {

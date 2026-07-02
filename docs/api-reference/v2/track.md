@@ -5,7 +5,7 @@ Get audio tracks, likers, and associated media.
 !!! info "Authentication & errors"
     All endpoints require `x-access-key` header. See [Authentication](../../getting-started/authentication.md). Error responses: [Response Codes](../response-codes.md).
 
-**Endpoints:** [`/v2/track/by/canonical/id`](#get-v2trackbycanonicalid) | [`/v2/track/by/id`](#get-v2trackbyid) | [`/v2/track/stream/by/id`](#get-v2trackstreambyid) | [`/v3/fbsearch/accounts`](#get-v3fbsearchaccounts) | [`/v3/fbsearch/places`](#get-v3fbsearchplaces)
+**Endpoints:** [`/v2/track/by/canonical/id`](#get-v2trackbycanonicalid) | [`/v2/track/by/id`](#get-v2trackbyid) | [`/v2/track/stream/by/id`](#get-v2trackstreambyid) | [`/v3/fbsearch/accounts`](#get-v3fbsearchaccounts) | [`/v3/fbsearch/places`](#get-v3fbsearchplaces) | [`/v3/media/likers`](#get-v3medialikers)
 
 ---
 
@@ -17,6 +17,7 @@ Get music track object by canonical_id. Returns audio track data.
 |-----------|------|----------|-------------|
 | `canonical_id` | string | Yes | Canonical Id |
 | `page_id` | string | No | Use value of field `next_page_id` from response for getting next page |
+| `safe_int` | boolean | No | Convert all big integers to strings |
 
 === "curl"
 
@@ -1341,6 +1342,7 @@ Get music track object by id. Returns audio track data.
 |-----------|------|----------|-------------|
 | `track_id` | string | Yes | Track Id |
 | `page_id` | string | No | Use value of field `next_page_id` from response for getting next page |
+| `safe_int` | boolean | No | Convert all big integers to strings |
 
 === "curl"
 
@@ -2638,6 +2640,7 @@ Get music track object by id. Returns audio track data.
 |-----------|------|----------|-------------|
 | `track_id` | string | Yes | Track Id |
 | `page_id` | string | No | Use value of field `next_page_id` from response for getting next page |
+| `safe_int` | boolean | No | Convert all big integers to strings |
 
 === "curl"
 
@@ -4169,6 +4172,104 @@ Search places. Returns a list of matching results.
   ],
   "has_more": false,
   "rank_token": "1775669268716|6b8da1c570bd8b15f4e0e6fb1ec3416ae3000e143161dd9206412a55c803bfe3",
+  "status": "ok"
+}
+```
+
+</details>
+
+---
+
+### GET /v3/media/likers
+
+Get a post's likers (ranked, capped ~200). Returns a list of User objects.
+
+| Parameter | Type | Required | Description |
+|-----------|------|----------|-------------|
+| `id` | string | Yes | Id |
+| `safe_int` | boolean | No | Convert all big integers to strings |
+
+=== "curl"
+
+    ```bash
+    curl -H "x-access-key: YOUR_TOKEN" \
+      "https://api.hikerapi.com/v3/media/likers?id=3776832898280228145"
+    ```
+
+=== "Python (requests)"
+
+    ```python
+    import requests
+
+    response = requests.get(
+        "https://api.hikerapi.com/v3/media/likers",
+        headers={"x-access-key": "YOUR_TOKEN"},
+        params={"id": "3776832898280228145"},
+    )
+    print(response.json())
+    ```
+
+=== "JavaScript"
+
+    ```javascript
+    const response = await fetch(
+      "https://api.hikerapi.com/v3/media/likers?id=3776832898280228145",
+      { headers: { "x-access-key": "YOUR_TOKEN" } }
+    );
+    const data = await response.json();
+    ```
+
+<details>
+<summary>Example response</summary>
+
+```json
+{
+  "users": [
+    {
+      "pk": 2228799241,
+      "pk_id": "2228799241",
+      "strong_id__": "2228799241",
+      "id": "2228799241",
+      "account_badges": [],
+      "full_name": "",
+      "is_private": false,
+      "is_verified": false,
+      "profile_pic_url": "https://scontent-lga3-2.cdninstagram.com/...",
+      "username": "miftasya._",
+      "latest_reel_media": 1782931579
+    },
+    {
+      "pk": 277099018,
+      "pk_id": "277099018",
+      "strong_id__": "277099018",
+      "id": "277099018",
+      "account_badges": [],
+      "full_name": "Nikki Gosal",
+      "is_private": true,
+      "is_verified": false,
+      "profile_pic_id": "3677483871261578250_277099018",
+      "profile_pic_url": "https://scontent-lga3-1.cdninstagram.com/...",
+      "username": "nikki_says_meow",
+      "latest_reel_media": 0
+    },
+    {
+      "pk": 3992818700,
+      "pk_id": "3992818700",
+      "strong_id__": "3992818700",
+      "id": "3992818700",
+      "account_badges": [],
+      "full_name": "Lineth García González",
+      "is_private": false,
+      "is_verified": false,
+      "profile_pic_id": "2524294629700111501_3992818700",
+      "profile_pic_url": "https://scontent-lga3-2.cdninstagram.com/...",
+      "username": "linethquirurgica",
+      "latest_reel_media": 0
+    }
+  ],
+  "user_count": 135154,
+  "play_count": 2867213,
+  "follow_ranking_token": "1b6babd1b5fd4c4b892acf6b7d7002e6|12334677859|osr",
   "status": "ok"
 }
 ```

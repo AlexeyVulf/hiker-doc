@@ -8,7 +8,7 @@
             "name": "Pricing",
             "url": "https://hikerapi.com/pricing"
         },
-        "version": "1.7.9"
+        "version": "1.8.0"
     },
     "paths": {
         "/v2/fbsearch/topsearch": {
@@ -43,6 +43,24 @@
                             "type": "string",
                             "title": "Next Max Id"
                         }
+                    },
+                    {
+                        "name": "safe_int",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "anyOf": [
+                                {
+                                    "type": "boolean"
+                                },
+                                {
+                                    "type": "null"
+                                }
+                            ],
+                            "description": "Convert all big integers to strings",
+                            "title": "Safe Int"
+                        },
+                        "description": "Convert all big integers to strings"
                     }
                 ],
                 "responses": {
@@ -159,6 +177,24 @@
                         }
                     },
                     {
+                        "name": "safe_int",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "anyOf": [
+                                {
+                                    "type": "boolean"
+                                },
+                                {
+                                    "type": "null"
+                                }
+                            ],
+                            "description": "Convert all big integers to strings",
+                            "title": "Safe Int"
+                        },
+                        "description": "Convert all big integers to strings"
+                    },
+                    {
                         "name": "page_id",
                         "in": "query",
                         "required": false,
@@ -225,6 +261,24 @@
                             "type": "string",
                             "title": "Username"
                         }
+                    },
+                    {
+                        "name": "safe_int",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "anyOf": [
+                                {
+                                    "type": "boolean"
+                                },
+                                {
+                                    "type": "null"
+                                }
+                            ],
+                            "description": "Convert all big integers to strings",
+                            "title": "Safe Int"
+                        },
+                        "description": "Convert all big integers to strings"
                     }
                 ],
                 "responses": {
@@ -526,6 +580,24 @@
                             "type": "string",
                             "title": "Id"
                         }
+                    },
+                    {
+                        "name": "safe_int",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "anyOf": [
+                                {
+                                    "type": "boolean"
+                                },
+                                {
+                                    "type": "null"
+                                }
+                            ],
+                            "description": "Convert all big integers to strings",
+                            "title": "Safe Int"
+                        },
+                        "description": "Convert all big integers to strings"
                     }
                 ],
                 "responses": {
@@ -801,6 +873,24 @@
                             "title": "Page Id"
                         },
                         "description": "Use value of field `next_page_id` from response for getting next page"
+                    },
+                    {
+                        "name": "safe_int",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "anyOf": [
+                                {
+                                    "type": "boolean"
+                                },
+                                {
+                                    "type": "null"
+                                }
+                            ],
+                            "description": "Convert all big integers to strings",
+                            "title": "Safe Int"
+                        },
+                        "description": "Convert all big integers to strings"
                     }
                 ],
                 "responses": {
@@ -875,6 +965,24 @@
                             "title": "Page Id"
                         },
                         "description": "Use value of field `next_page_id` from response for getting next page"
+                    },
+                    {
+                        "name": "safe_int",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "anyOf": [
+                                {
+                                    "type": "boolean"
+                                },
+                                {
+                                    "type": "null"
+                                }
+                            ],
+                            "description": "Convert all big integers to strings",
+                            "title": "Safe Int"
+                        },
+                        "description": "Convert all big integers to strings"
                     }
                 ],
                 "responses": {
@@ -1572,6 +1680,24 @@
                             "title": "Page Id"
                         },
                         "description": "Use value of field `next_page_id` from response for getting next page"
+                    },
+                    {
+                        "name": "safe_int",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "anyOf": [
+                                {
+                                    "type": "boolean"
+                                },
+                                {
+                                    "type": "null"
+                                }
+                            ],
+                            "description": "Convert all big integers to strings",
+                            "title": "Safe Int"
+                        },
+                        "description": "Convert all big integers to strings"
                     }
                 ],
                 "responses": {
@@ -1850,6 +1976,24 @@
                             "title": "Force"
                         },
                         "description": "Skip account privacy check"
+                    },
+                    {
+                        "name": "safe_int",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "anyOf": [
+                                {
+                                    "type": "boolean"
+                                },
+                                {
+                                    "type": "null"
+                                }
+                            ],
+                            "description": "Convert all big integers to strings",
+                            "title": "Safe Int"
+                        },
+                        "description": "Convert all big integers to strings"
                     }
                 ],
                 "responses": {
@@ -1952,6 +2096,24 @@
                             "title": "Force"
                         },
                         "description": "Skip account privacy check"
+                    },
+                    {
+                        "name": "safe_int",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "anyOf": [
+                                {
+                                    "type": "boolean"
+                                },
+                                {
+                                    "type": "null"
+                                }
+                            ],
+                            "description": "Convert all big integers to strings",
+                            "title": "Safe Int"
+                        },
+                        "description": "Convert all big integers to strings"
                     }
                 ],
                 "responses": {
@@ -2283,6 +2445,24 @@
                             "type": "string",
                             "title": "Username"
                         }
+                    },
+                    {
+                        "name": "safe_int",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "anyOf": [
+                                {
+                                    "type": "boolean"
+                                },
+                                {
+                                    "type": "null"
+                                }
+                            ],
+                            "description": "Convert all big integers to strings",
+                            "title": "Safe Int"
+                        },
+                        "description": "Convert all big integers to strings"
                     }
                 ],
                 "responses": {
@@ -2374,6 +2554,24 @@
                             "type": "string",
                             "title": "Id"
                         }
+                    },
+                    {
+                        "name": "safe_int",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "anyOf": [
+                                {
+                                    "type": "boolean"
+                                },
+                                {
+                                    "type": "null"
+                                }
+                            ],
+                            "description": "Convert all big integers to strings",
+                            "title": "Safe Int"
+                        },
+                        "description": "Convert all big integers to strings"
                     }
                 ],
                 "responses": {
@@ -3176,6 +3374,24 @@
                             "default": false,
                             "title": "Expand Suggestion"
                         }
+                    },
+                    {
+                        "name": "safe_int",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "anyOf": [
+                                {
+                                    "type": "boolean"
+                                },
+                                {
+                                    "type": "null"
+                                }
+                            ],
+                            "description": "Convert all big integers to strings",
+                            "title": "Safe Int"
+                        },
+                        "description": "Convert all big integers to strings"
                     }
                 ],
                 "responses": {
@@ -3233,6 +3449,24 @@
                             "type": "string",
                             "title": "User Id"
                         }
+                    },
+                    {
+                        "name": "safe_int",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "anyOf": [
+                                {
+                                    "type": "boolean"
+                                },
+                                {
+                                    "type": "null"
+                                }
+                            ],
+                            "description": "Convert all big integers to strings",
+                            "title": "Safe Int"
+                        },
+                        "description": "Convert all big integers to strings"
                     }
                 ],
                 "responses": {
@@ -3957,6 +4191,24 @@
                             "type": "string",
                             "title": "Code"
                         }
+                    },
+                    {
+                        "name": "safe_int",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "anyOf": [
+                                {
+                                    "type": "boolean"
+                                },
+                                {
+                                    "type": "null"
+                                }
+                            ],
+                            "description": "Convert all big integers to strings",
+                            "title": "Safe Int"
+                        },
+                        "description": "Convert all big integers to strings"
                     }
                 ],
                 "responses": {
@@ -4063,6 +4315,24 @@
                             "type": "string",
                             "title": "Min Id"
                         }
+                    },
+                    {
+                        "name": "safe_int",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "anyOf": [
+                                {
+                                    "type": "boolean"
+                                },
+                                {
+                                    "type": "null"
+                                }
+                            ],
+                            "description": "Convert all big integers to strings",
+                            "title": "Safe Int"
+                        },
+                        "description": "Convert all big integers to strings"
                     }
                 ],
                 "responses": {
@@ -4120,6 +4390,24 @@
                             "type": "string",
                             "title": "Id"
                         }
+                    },
+                    {
+                        "name": "safe_int",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "anyOf": [
+                                {
+                                    "type": "boolean"
+                                },
+                                {
+                                    "type": "null"
+                                }
+                            ],
+                            "description": "Convert all big integers to strings",
+                            "title": "Safe Int"
+                        },
+                        "description": "Convert all big integers to strings"
                     }
                 ],
                 "responses": {
@@ -4364,6 +4652,24 @@
                             "type": "string",
                             "title": "Url"
                         }
+                    },
+                    {
+                        "name": "safe_int",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "anyOf": [
+                                {
+                                    "type": "boolean"
+                                },
+                                {
+                                    "type": "null"
+                                }
+                            ],
+                            "description": "Convert all big integers to strings",
+                            "title": "Safe Int"
+                        },
+                        "description": "Convert all big integers to strings"
                     }
                 ],
                 "responses": {
@@ -4510,6 +4816,24 @@
                             "type": "string",
                             "title": "Id"
                         }
+                    },
+                    {
+                        "name": "safe_int",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "anyOf": [
+                                {
+                                    "type": "boolean"
+                                },
+                                {
+                                    "type": "null"
+                                }
+                            ],
+                            "description": "Convert all big integers to strings",
+                            "title": "Safe Int"
+                        },
+                        "description": "Convert all big integers to strings"
                     }
                 ],
                 "responses": {
@@ -4738,6 +5062,24 @@
                             "type": "string",
                             "title": "Comment"
                         }
+                    },
+                    {
+                        "name": "safe_int",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "anyOf": [
+                                {
+                                    "type": "boolean"
+                                },
+                                {
+                                    "type": "null"
+                                }
+                            ],
+                            "description": "Convert all big integers to strings",
+                            "title": "Safe Int"
+                        },
+                        "description": "Convert all big integers to strings"
                     }
                 ],
                 "responses": {
@@ -5004,6 +5346,24 @@
                             "type": "string",
                             "title": "Id"
                         }
+                    },
+                    {
+                        "name": "safe_int",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "anyOf": [
+                                {
+                                    "type": "boolean"
+                                },
+                                {
+                                    "type": "null"
+                                }
+                            ],
+                            "description": "Convert all big integers to strings",
+                            "title": "Safe Int"
+                        },
+                        "description": "Convert all big integers to strings"
                     }
                 ],
                 "responses": {
@@ -5363,6 +5723,106 @@
                     {
                         "lang": "Python",
                         "source": "from hikerapi import Client\n\ncl = Client(<ACCESS_KEY>)\nres = await cl.media_user_v1(media_id=\"3162273595027945978\")\n",
+                        "label": "Python"
+                    }
+                ],
+                "required": false
+            }
+        },
+        "/v3/media/likers": {
+            "get": {
+                "tags": [
+                    "Post Details"
+                ],
+                "summary": "Media Likers",
+                "description": "Get a post's likers (ranked, capped ~200)",
+                "operationId": "media_likers_v3_media_likers_get",
+                "security": [
+                    {
+                        "APIKeyHeader": []
+                    }
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "query",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "title": "Id"
+                        }
+                    },
+                    {
+                        "name": "safe_int",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "anyOf": [
+                                {
+                                    "type": "boolean"
+                                },
+                                {
+                                    "type": "null"
+                                }
+                            ],
+                            "description": "Convert all big integers to strings",
+                            "title": "Safe Int"
+                        },
+                        "description": "Convert all big integers to strings"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful Response",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "additionalProperties": true,
+                                    "title": "Response Media Likers V3 Media Likers Get"
+                                },
+                                "example": {
+                                    "users": [
+                                        {
+                                            "strong_id__": "59560451506",
+                                            "pk": 59560451506,
+                                            "pk_id": "59560451506",
+                                            "id": "59560451506",
+                                            "username": "batcha_de_leon",
+                                            "full_name": "Just call me Batcha",
+                                            "is_private": false,
+                                            "is_verified": false,
+                                            "profile_pic_id": "3839024502038602130_59560451506",
+                                            "profile_pic_url": "https://cdn.example.com/...",
+                                            "is_new": false,
+                                            "latest_reel_media": 0
+                                        },
+                                        "... (54 more items)"
+                                    ],
+                                    "user_count": 55,
+                                    "status": "ok"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Not found"
+                    },
+                    "422": {
+                        "description": "Validation Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/HTTPValidationError"
+                                }
+                            }
+                        }
+                    }
+                },
+                "x-codeSamples": [
+                    {
+                        "lang": "Python",
+                        "source": "from hikerapi import Client\n\ncl = Client(<ACCESS_KEY>)\nres = await cl.media_likers_v3(id=\"2588864825828721736\")\n",
                         "label": "Python"
                     }
                 ],
@@ -5757,6 +6217,24 @@
                             "type": "string",
                             "title": "Rank Token"
                         }
+                    },
+                    {
+                        "name": "safe_int",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "anyOf": [
+                                {
+                                    "type": "boolean"
+                                },
+                                {
+                                    "type": "null"
+                                }
+                            ],
+                            "description": "Convert all big integers to strings",
+                            "title": "Safe Int"
+                        },
+                        "description": "Convert all big integers to strings"
                     }
                 ],
                 "responses": {
@@ -5842,6 +6320,24 @@
                             "type": "string",
                             "title": "Page Token"
                         }
+                    },
+                    {
+                        "name": "safe_int",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "anyOf": [
+                                {
+                                    "type": "boolean"
+                                },
+                                {
+                                    "type": "null"
+                                }
+                            ],
+                            "description": "Convert all big integers to strings",
+                            "title": "Safe Int"
+                        },
+                        "description": "Convert all big integers to strings"
                     }
                 ],
                 "responses": {
@@ -5943,6 +6439,24 @@
                             "type": "string",
                             "title": "Next Max Id"
                         }
+                    },
+                    {
+                        "name": "safe_int",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "anyOf": [
+                                {
+                                    "type": "boolean"
+                                },
+                                {
+                                    "type": "null"
+                                }
+                            ],
+                            "description": "Convert all big integers to strings",
+                            "title": "Safe Int"
+                        },
+                        "description": "Convert all big integers to strings"
                     }
                 ],
                 "responses": {
@@ -6033,6 +6547,24 @@
                             "type": "string",
                             "title": "Page Token"
                         }
+                    },
+                    {
+                        "name": "safe_int",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "anyOf": [
+                                {
+                                    "type": "boolean"
+                                },
+                                {
+                                    "type": "null"
+                                }
+                            ],
+                            "description": "Convert all big integers to strings",
+                            "title": "Safe Int"
+                        },
+                        "description": "Convert all big integers to strings"
                     }
                 ],
                 "responses": {
@@ -6494,6 +7026,24 @@
                             "type": "string",
                             "title": "Query"
                         }
+                    },
+                    {
+                        "name": "safe_int",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "anyOf": [
+                                {
+                                    "type": "boolean"
+                                },
+                                {
+                                    "type": "null"
+                                }
+                            ],
+                            "description": "Convert all big integers to strings",
+                            "title": "Safe Int"
+                        },
+                        "description": "Convert all big integers to strings"
                     }
                 ],
                 "responses": {
@@ -6582,6 +7132,24 @@
                             "title": "Page Id"
                         },
                         "description": "Use value of field `next_page_id` from response for getting next page"
+                    },
+                    {
+                        "name": "safe_int",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "anyOf": [
+                                {
+                                    "type": "boolean"
+                                },
+                                {
+                                    "type": "null"
+                                }
+                            ],
+                            "description": "Convert all big integers to strings",
+                            "title": "Safe Int"
+                        },
+                        "description": "Convert all big integers to strings"
                     }
                 ],
                 "responses": {
@@ -6645,6 +7213,24 @@
                             "title": "Page Id"
                         },
                         "description": "Use value of field `next_page_id` from response for getting next page"
+                    },
+                    {
+                        "name": "safe_int",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "anyOf": [
+                                {
+                                    "type": "boolean"
+                                },
+                                {
+                                    "type": "null"
+                                }
+                            ],
+                            "description": "Convert all big integers to strings",
+                            "title": "Safe Int"
+                        },
+                        "description": "Convert all big integers to strings"
                     }
                 ],
                 "responses": {
@@ -6853,6 +7439,24 @@
                             "type": "string",
                             "title": "Name"
                         }
+                    },
+                    {
+                        "name": "safe_int",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "anyOf": [
+                                {
+                                    "type": "boolean"
+                                },
+                                {
+                                    "type": "null"
+                                }
+                            ],
+                            "description": "Convert all big integers to strings",
+                            "title": "Safe Int"
+                        },
+                        "description": "Convert all big integers to strings"
                     }
                 ],
                 "responses": {
@@ -6989,97 +7593,6 @@
                 "required": false
             }
         },
-        "/v1/hashtag/medias/top/recent/chunk": {
-            "get": {
-                "tags": [
-                    "Hashtags"
-                ],
-                "summary": "Hashtag Medias Top Recent Chunk",
-                "description": "Get hashtag chunk of recent medias",
-                "operationId": "hashtag_medias_top_recent_chunk_v1_hashtag_medias_top_recent_chunk_get",
-                "security": [
-                    {
-                        "APIKeyHeader": []
-                    }
-                ],
-                "parameters": [
-                    {
-                        "name": "name",
-                        "in": "query",
-                        "required": true,
-                        "schema": {
-                            "type": "string",
-                            "description": "Please make sure to use a clean hashtag without any special symbols. \n\n**Good one**: love, sea, dog, \uacf5\uad6c \n\n**Bad one**: #dog, sea_., tanjung.., #\uacf5\uad6c. ",
-                            "title": "Name"
-                        },
-                        "description": "Please make sure to use a clean hashtag without any special symbols. \n\n**Good one**: love, sea, dog, \uacf5\uad6c \n\n**Bad one**: #dog, sea_., tanjung.., #\uacf5\uad6c. "
-                    },
-                    {
-                        "name": "max_id",
-                        "in": "query",
-                        "required": false,
-                        "schema": {
-                            "type": "string",
-                            "title": "Max Id"
-                        }
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "Successful Response",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "type": "array",
-                                    "prefixItems": [
-                                        {
-                                            "type": "array",
-                                            "items": {
-                                                "$ref": "#/components/schemas/Media"
-                                            }
-                                        },
-                                        {
-                                            "anyOf": [
-                                                {
-                                                    "type": "string"
-                                                },
-                                                {
-                                                    "type": "null"
-                                                }
-                                            ]
-                                        }
-                                    ],
-                                    "minItems": 2,
-                                    "maxItems": 2,
-                                    "title": "Response Hashtag Medias Top Recent Chunk V1 Hashtag Medias Top Recent Chunk Get"
-                                }
-                            }
-                        }
-                    },
-                    "404": {
-                        "description": "Not found"
-                    },
-                    "422": {
-                        "description": "Validation Error",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/HTTPValidationError"
-                                }
-                            }
-                        }
-                    }
-                },
-                "x-codeSamples": [
-                    {
-                        "lang": "Python",
-                        "source": "from hikerapi import Client\n\ncl = Client(<ACCESS_KEY>)\nres = await cl.hashtag_medias_recent_chunk_v1(name=\"love\", max_id=None)\n",
-                        "label": "Python"
-                    }
-                ],
-                "required": false
-            }
-        },
         "/v2/track/by/id": {
             "get": {
                 "tags": [
@@ -7114,6 +7627,24 @@
                             "title": "Page Id"
                         },
                         "description": "Use value of field `next_page_id` from response for getting next page"
+                    },
+                    {
+                        "name": "safe_int",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "anyOf": [
+                                {
+                                    "type": "boolean"
+                                },
+                                {
+                                    "type": "null"
+                                }
+                            ],
+                            "description": "Convert all big integers to strings",
+                            "title": "Safe Int"
+                        },
+                        "description": "Convert all big integers to strings"
                     }
                 ],
                 "responses": {
@@ -7185,6 +7716,24 @@
                             "title": "Page Id"
                         },
                         "description": "Use value of field `next_page_id` from response for getting next page"
+                    },
+                    {
+                        "name": "safe_int",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "anyOf": [
+                                {
+                                    "type": "boolean"
+                                },
+                                {
+                                    "type": "null"
+                                }
+                            ],
+                            "description": "Convert all big integers to strings",
+                            "title": "Safe Int"
+                        },
+                        "description": "Convert all big integers to strings"
                     }
                 ],
                 "responses": {
@@ -7256,6 +7805,24 @@
                             "title": "Page Id"
                         },
                         "description": "Use value of field `next_page_id` from response for getting next page"
+                    },
+                    {
+                        "name": "safe_int",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "anyOf": [
+                                {
+                                    "type": "boolean"
+                                },
+                                {
+                                    "type": "null"
+                                }
+                            ],
+                            "description": "Convert all big integers to strings",
+                            "title": "Safe Int"
+                        },
+                        "description": "Convert all big integers to strings"
                     }
                 ],
                 "responses": {
@@ -7843,6 +8410,24 @@
                             "type": "string",
                             "title": "Url"
                         }
+                    },
+                    {
+                        "name": "safe_int",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "anyOf": [
+                                {
+                                    "type": "boolean"
+                                },
+                                {
+                                    "type": "null"
+                                }
+                            ],
+                            "description": "Convert all big integers to strings",
+                            "title": "Safe Int"
+                        },
+                        "description": "Convert all big integers to strings"
                     }
                 ],
                 "responses": {
@@ -8053,6 +8638,24 @@
                             "type": "string",
                             "title": "Id"
                         }
+                    },
+                    {
+                        "name": "safe_int",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "anyOf": [
+                                {
+                                    "type": "boolean"
+                                },
+                                {
+                                    "type": "null"
+                                }
+                            ],
+                            "description": "Convert all big integers to strings",
+                            "title": "Safe Int"
+                        },
+                        "description": "Convert all big integers to strings"
                     }
                 ],
                 "responses": {
@@ -8316,6 +8919,24 @@
                             "type": "string",
                             "title": "Id"
                         }
+                    },
+                    {
+                        "name": "safe_int",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "anyOf": [
+                                {
+                                    "type": "boolean"
+                                },
+                                {
+                                    "type": "null"
+                                }
+                            ],
+                            "description": "Convert all big integers to strings",
+                            "title": "Safe Int"
+                        },
+                        "description": "Convert all big integers to strings"
                     }
                 ],
                 "responses": {
@@ -8869,6 +9490,24 @@
                             "title": "Page Id"
                         },
                         "description": "Use value of field `next_page_id` from response for getting next page"
+                    },
+                    {
+                        "name": "safe_int",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "anyOf": [
+                                {
+                                    "type": "boolean"
+                                },
+                                {
+                                    "type": "null"
+                                }
+                            ],
+                            "description": "Convert all big integers to strings",
+                            "title": "Safe Int"
+                        },
+                        "description": "Convert all big integers to strings"
                     }
                 ],
                 "responses": {
@@ -9434,6 +10073,24 @@
                             "type": "string",
                             "title": "Page Token"
                         }
+                    },
+                    {
+                        "name": "safe_int",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "anyOf": [
+                                {
+                                    "type": "boolean"
+                                },
+                                {
+                                    "type": "null"
+                                }
+                            ],
+                            "description": "Convert all big integers to strings",
+                            "title": "Safe Int"
+                        },
+                        "description": "Convert all big integers to strings"
                     }
                 ],
                 "responses": {
@@ -9554,6 +10211,24 @@
                             "type": "string",
                             "title": "Reels Max Id"
                         }
+                    },
+                    {
+                        "name": "safe_int",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "anyOf": [
+                                {
+                                    "type": "boolean"
+                                },
+                                {
+                                    "type": "null"
+                                }
+                            ],
+                            "description": "Convert all big integers to strings",
+                            "title": "Safe Int"
+                        },
+                        "description": "Convert all big integers to strings"
                     }
                 ],
                 "responses": {
@@ -9762,6 +10437,24 @@
                             "type": "string",
                             "title": "Rank Token"
                         }
+                    },
+                    {
+                        "name": "safe_int",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "anyOf": [
+                                {
+                                    "type": "boolean"
+                                },
+                                {
+                                    "type": "null"
+                                }
+                            ],
+                            "description": "Convert all big integers to strings",
+                            "title": "Safe Int"
+                        },
+                        "description": "Convert all big integers to strings"
                     }
                 ],
                 "responses": {
@@ -9839,6 +10532,24 @@
                             "type": "string",
                             "title": "Query"
                         }
+                    },
+                    {
+                        "name": "safe_int",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "anyOf": [
+                                {
+                                    "type": "boolean"
+                                },
+                                {
+                                    "type": "null"
+                                }
+                            ],
+                            "description": "Convert all big integers to strings",
+                            "title": "Safe Int"
+                        },
+                        "description": "Convert all big integers to strings"
                     }
                 ],
                 "responses": {
@@ -10760,6 +11471,98 @@
                 "required": false
             }
         },
+        "/v1/hashtag/medias/top/recent/chunk": {
+            "get": {
+                "tags": [
+                    "Legacy"
+                ],
+                "summary": "Use /v1/hashtag/medias/top/chunk or /v2/hashtag/medias/top instead",
+                "description": "Get hashtag chunk of recent medias",
+                "operationId": "hashtag_medias_top_recent_chunk_v1_hashtag_medias_top_recent_chunk_get",
+                "deprecated": true,
+                "security": [
+                    {
+                        "APIKeyHeader": []
+                    }
+                ],
+                "parameters": [
+                    {
+                        "name": "name",
+                        "in": "query",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "description": "Please make sure to use a clean hashtag without any special symbols. \n\n**Good one**: love, sea, dog, \uacf5\uad6c \n\n**Bad one**: #dog, sea_., tanjung.., #\uacf5\uad6c. ",
+                            "title": "Name"
+                        },
+                        "description": "Please make sure to use a clean hashtag without any special symbols. \n\n**Good one**: love, sea, dog, \uacf5\uad6c \n\n**Bad one**: #dog, sea_., tanjung.., #\uacf5\uad6c. "
+                    },
+                    {
+                        "name": "max_id",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string",
+                            "title": "Max Id"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful Response",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "prefixItems": [
+                                        {
+                                            "type": "array",
+                                            "items": {
+                                                "$ref": "#/components/schemas/Media"
+                                            }
+                                        },
+                                        {
+                                            "anyOf": [
+                                                {
+                                                    "type": "string"
+                                                },
+                                                {
+                                                    "type": "null"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "minItems": 2,
+                                    "maxItems": 2,
+                                    "title": "Response Hashtag Medias Top Recent Chunk V1 Hashtag Medias Top Recent Chunk Get"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Not found"
+                    },
+                    "422": {
+                        "description": "Validation Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/HTTPValidationError"
+                                }
+                            }
+                        }
+                    }
+                },
+                "x-codeSamples": [
+                    {
+                        "lang": "Python",
+                        "source": "from hikerapi import Client\n\ncl = Client(<ACCESS_KEY>)\nres = await cl.hashtag_medias_recent_chunk_v1(name=\"love\", max_id=None)\n",
+                        "label": "Python"
+                    }
+                ],
+                "required": false
+            }
+        },
         "/v1/media/comments": {
             "get": {
                 "tags": [
@@ -11646,6 +12449,24 @@
                             "type": "string",
                             "title": "Code"
                         }
+                    },
+                    {
+                        "name": "safe_int",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "anyOf": [
+                                {
+                                    "type": "boolean"
+                                },
+                                {
+                                    "type": "null"
+                                }
+                            ],
+                            "description": "Convert all big integers to strings",
+                            "title": "Safe Int"
+                        },
+                        "description": "Convert all big integers to strings"
                     }
                 ],
                 "responses": {
@@ -11734,6 +12555,24 @@
                             "type": "string",
                             "title": "Id"
                         }
+                    },
+                    {
+                        "name": "safe_int",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "anyOf": [
+                                {
+                                    "type": "boolean"
+                                },
+                                {
+                                    "type": "null"
+                                }
+                            ],
+                            "description": "Convert all big integers to strings",
+                            "title": "Safe Int"
+                        },
+                        "description": "Convert all big integers to strings"
                     }
                 ],
                 "responses": {
@@ -11822,6 +12661,24 @@
                             "type": "string",
                             "title": "Url"
                         }
+                    },
+                    {
+                        "name": "safe_int",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "anyOf": [
+                                {
+                                    "type": "boolean"
+                                },
+                                {
+                                    "type": "null"
+                                }
+                            ],
+                            "description": "Convert all big integers to strings",
+                            "title": "Safe Int"
+                        },
+                        "description": "Convert all big integers to strings"
                     }
                 ],
                 "responses": {
@@ -14309,6 +15166,18 @@
                             }
                         ],
                         "title": "Is Verified"
+                    },
+                    "account_badges": {
+                        "anyOf": [
+                            {
+                                "items": {},
+                                "type": "array"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "title": "Account Badges"
                     }
                 },
                 "type": "object",
@@ -14410,6 +15279,18 @@
                             }
                         ],
                         "title": "Is Verified"
+                    },
+                    "account_badges": {
+                        "anyOf": [
+                            {
+                                "items": {},
+                                "type": "array"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "title": "Account Badges"
                     },
                     "reel": {
                         "$ref": "#/components/schemas/UserReel"

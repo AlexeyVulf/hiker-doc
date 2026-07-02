@@ -16,6 +16,7 @@ Get story object by id. Returns a Story object.
 | Parameter | Type | Required | Description |
 |-----------|------|----------|-------------|
 | `id` | string | Yes | Id |
+| `safe_int` | boolean | No | Convert all big integers to strings |
 
 === "curl"
 
@@ -65,6 +66,7 @@ Get story object by id. Returns a Story object.
 | Parameter | Type | Required | Description |
 |-----------|------|----------|-------------|
 | `url` | string | Yes | Url |
+| `safe_int` | boolean | No | Convert all big integers to strings |
 
 === "curl"
 

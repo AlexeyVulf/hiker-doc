@@ -75,6 +75,7 @@ ENDPOINT_PARAMS = {
     # User — g2
     "/g2/user/followers": {"user_id": USER_PK},
     "/g2/user/following": {"user_id": USER_PK},
+    "/g2/user/medias": {"user_id": USER_PK},
     # User — g1 (legacy public GraphQL)
     "/g1/user/followers": {"user_id": USER_PK},
     "/g1/user/following": {"user_id": USER_PK},
@@ -118,6 +119,7 @@ ENDPOINT_PARAMS = {
         "comment_id": RICH_COMMENT_ID,
     },
     "/v2/media/likers": {"id": MEDIA_ID},
+    "/v3/media/likers": {"id": MEDIA_ID},
     "/v2/media/template": {"id": MEDIA_ID},
     "/v2/media/comment/offensive": {
         "media_id": MEDIA_ID,

@@ -17,6 +17,7 @@ Whether to receive an offensive comment
 |-----------|------|----------|-------------|
 | `media_id` | string | Yes | Media Id |
 | `comment` | string | Yes | Comment |
+| `safe_int` | boolean | No | Convert all big integers to strings |
 
 === "curl"
 
@@ -83,6 +84,7 @@ Get comments on a media. Returns a list of Comment objects.
 |-----------|------|----------|-------------|
 | `id` | string | Yes | Id |
 | `can_support_threading` | boolean | No | Can Support Threading |
+| `safe_int` | boolean | No | Convert all big integers to strings |
 | `page_id` | string | No | Page Id |
 
 === "curl"
@@ -1075,6 +1077,7 @@ Get media comment replies with pagination by min_id. Returns a list of Comment o
 | `media_id` | string | Yes | Media Id |
 | `comment_id` | string | Yes | Comment Id |
 | `min_id` | string | No | Min Id |
+| `safe_int` | boolean | No | Convert all big integers to strings |
 
 === "curl"
 
@@ -2121,6 +2124,7 @@ Get media object
 | Parameter | Type | Required | Description |
 |-----------|------|----------|-------------|
 | `code` | string | Yes | Code |
+| `safe_int` | boolean | No | Convert all big integers to strings |
 
 === "curl"
 
@@ -2477,6 +2481,7 @@ Get media object
 | Parameter | Type | Required | Description |
 |-----------|------|----------|-------------|
 | `id` | string | Yes | Id |
+| `safe_int` | boolean | No | Convert all big integers to strings |
 
 === "curl"
 
@@ -2833,6 +2838,7 @@ Get media object
 | Parameter | Type | Required | Description |
 |-----------|------|----------|-------------|
 | `url` | string | Yes | Url |
+| `safe_int` | boolean | No | Convert all big integers to strings |
 
 === "curl"
 
@@ -3189,6 +3195,7 @@ Get user's likers. Returns a list of User objects.
 | Parameter | Type | Required | Description |
 |-----------|------|----------|-------------|
 | `id` | string | Yes | Id |
+| `safe_int` | boolean | No | Convert all big integers to strings |
 
 === "curl"
 
@@ -3294,6 +3301,7 @@ Get media template
 | Parameter | Type | Required | Description |
 |-----------|------|----------|-------------|
 | `id` | string | Yes | Id |
+| `safe_int` | boolean | No | Convert all big integers to strings |
 
 === "curl"
 

@@ -16,6 +16,7 @@ Get hashtag object by name. Returns a Hashtag object.
 | Parameter | Type | Required | Description |
 |-----------|------|----------|-------------|
 | `name` | string | Yes | Name |
+| `safe_int` | boolean | No | Convert all big integers to strings |
 
 === "curl"
 
@@ -89,6 +90,7 @@ Get hashtag chunk of recent medias. Returns a list of Media objects.
 |-----------|------|----------|-------------|
 | `name` | string | Yes | Name |
 | `page_id` | string | No | Use value of field `next_page_id` from response for getting next page |
+| `safe_int` | boolean | No | Convert all big integers to strings |
 
 === "curl"
 
@@ -2683,6 +2685,7 @@ Get hashtag chunk of top medias. Returns a list of Media objects.
 |-----------|------|----------|-------------|
 | `name` | string | Yes | Name |
 | `page_id` | string | No | Use value of field `next_page_id` from response for getting next page |
+| `safe_int` | boolean | No | Convert all big integers to strings |
 
 === "curl"
 

@@ -225,6 +225,7 @@ Get user object by id. Returns a User object.
 | Parameter | Type | Required | Description |
 |-----------|------|----------|-------------|
 | `id` | string | Yes | Id |
+| `safe_int` | boolean | No | Convert all big integers to strings |
 
 === "curl"
 
@@ -687,6 +688,7 @@ Get user object by username. Returns a User object.
 | Parameter | Type | Required | Description |
 |-----------|------|----------|-------------|
 | `username` | string | Yes | Username |
+| `safe_int` | boolean | No | Convert all big integers to strings |
 
 === "curl"
 
@@ -2286,6 +2288,7 @@ Get list of recommended accounts for business category of the user by his id. Re
 | Parameter | Type | Required | Description |
 |-----------|------|----------|-------------|
 | `user_id` | string | Yes | User Id |
+| `safe_int` | boolean | No | Convert all big integers to strings |
 
 === "curl"
 
@@ -2479,6 +2482,7 @@ Get part (one page) of followers users with cursor. Returns a list of User objec
 |-----------|------|----------|-------------|
 | `user_id` | string | No | Id of user account |
 | `page_id` | string | No | Use value of field `next_page_id` from response for getting next page |
+| `safe_int` | boolean | No | Convert all big integers to strings |
 
 === "curl"
 
@@ -2658,6 +2662,7 @@ Get part (one page) of following users. Returns a list of User objects.
 |-----------|------|----------|-------------|
 | `user_id` | string | No | Id of user account |
 | `page_id` | string | No | Use value of field `next_page_id` from response for getting next page |
+| `safe_int` | boolean | No | Convert all big integers to strings |
 
 === "curl"
 
@@ -2790,6 +2795,7 @@ Get part (one page) of following users. Returns a list of User objects.
 | `user_id` | string | Yes | User Id |
 | `amount` | integer | No | Amount |
 | `force` | boolean | No | Skip account privacy check |
+| `safe_int` | boolean | No | Convert all big integers to strings |
 
 === "curl"
 
@@ -3033,6 +3039,7 @@ Get part (one page) of following users. Returns a list of User objects.
 | `username` | string | Yes | Username |
 | `amount` | integer | No | Amount |
 | `force` | boolean | No | Skip account privacy check |
+| `safe_int` | boolean | No | Convert all big integers to strings |
 
 === "curl"
 
@@ -4633,6 +4640,7 @@ expand_suggestion=True for more detailed response
 |-----------|------|----------|-------------|
 | `user_id` | string | Yes | User Id |
 | `expand_suggestion` | boolean | No | Expand Suggestion |
+| `safe_int` | boolean | No | Convert all big integers to strings |
 
 === "curl"
 
@@ -4754,6 +4762,7 @@ Get usertag medias
 |-----------|------|----------|-------------|
 | `user_id` | string | No | Id of user account |
 | `page_id` | string | No | Use value of field `next_page_id` from response for getting next page |
+| `safe_int` | boolean | No | Convert all big integers to strings |
 
 === "curl"
 
@@ -5731,6 +5740,7 @@ Get userstream (info) by id. Returns user stream data.
 | Parameter | Type | Required | Description |
 |-----------|------|----------|-------------|
 | `id` | string | Yes | Id |
+| `safe_int` | boolean | No | Convert all big integers to strings |
 
 === "curl"
 
@@ -6258,6 +6268,7 @@ Get userstream (info) by username. Returns user stream data.
 | Parameter | Type | Required | Description |
 |-----------|------|----------|-------------|
 | `username` | string | Yes | Username |
+| `safe_int` | boolean | No | Convert all big integers to strings |
 
 === "curl"
 

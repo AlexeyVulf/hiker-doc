@@ -17,6 +17,7 @@ Search accounts. Returns a list of matching results.
 |-----------|------|----------|-------------|
 | `query` | string | Yes | Query |
 | `page_token` | string | No | Page Token |
+| `safe_int` | boolean | No | Convert all big integers to strings |
 
 === "curl"
 
@@ -171,6 +172,7 @@ Search places. Returns a list of matching results.
 | Parameter | Type | Required | Description |
 |-----------|------|----------|-------------|
 | `query` | string | Yes | Query |
+| `safe_int` | boolean | No | Convert all big integers to strings |
 
 === "curl"
 
@@ -285,6 +287,7 @@ Search top content by keyword. Returns a list of matching results.
 | `query` | string | Yes | Query |
 | `reels_max_id` | string | No | Reels Max Id |
 | `rank_token` | string | No | Rank Token |
+| `safe_int` | boolean | No | Convert all big integers to strings |
 
 === "curl"
 
@@ -1415,6 +1418,7 @@ Search top content by keyword. Returns a list of matching results.
 |-----------|------|----------|-------------|
 | `query` | string | Yes | Query |
 | `next_max_id` | string | No | Next Max Id |
+| `safe_int` | boolean | No | Convert all big integers to strings |
 
 === "curl"
 
@@ -6427,6 +6431,7 @@ Search hashtags. Returns a list of matching results.
 |-----------|------|----------|-------------|
 | `query` | string | Yes | Query |
 | `page_token` | string | No | Page Token |
+| `safe_int` | boolean | No | Convert all big integers to strings |
 
 === "curl"
 
@@ -6525,6 +6530,7 @@ Search music. Returns a list of matching results.
 |-----------|------|----------|-------------|
 | `query` | string | Yes | Query |
 | `next_max_id` | string | No | Next Max Id |
+| `safe_int` | boolean | No | Convert all big integers to strings |
 
 === "curl"
 
