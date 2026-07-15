@@ -631,8 +631,10 @@ def _generate_page(resource_key, spec, sdk_sigs):
         lines.append("## Deprecated endpoints")
         lines.append("")
         lines.append(
-            "These endpoints are still available but will be removed "
-            "in a future version. Use the recommended alternatives."
+            "These endpoints are deprecated — use the recommended "
+            "alternatives. Retired ones respond with **410 Gone** and are "
+            f"never charged (see [Response Codes]({codes_link})); the rest "
+            "still work but will be removed in a future version."
         )
         lines.append("")
         for ep in deprecated:

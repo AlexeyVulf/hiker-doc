@@ -6793,7 +6793,7 @@ Get userstream (info) by username. Returns user stream data.
 
 ## Deprecated endpoints
 
-These endpoints are still available but will be removed in a future version. Use the recommended alternatives.
+These endpoints are deprecated — use the recommended alternatives. Retired ones respond with **410 Gone** and are never charged (see [Response Codes](../response-codes.md)); the rest still work but will be removed in a future version.
 
 ### ~~GET /v2/user/medias~~
 

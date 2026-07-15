@@ -3,10 +3,12 @@
 Each API call may use one or more internal request units. The actual cost is returned in the response header:
 
 ```
-x-hiker-info: reqs=<number>
+x-hiker-info: {"reqs": 1}
 ```
 
 Most endpoints cost **1 request**. Some endpoints perform additional checks (privacy, ID lookup) and cost more.
+
+Retired endpoints respond with [`410 Gone`](../api-reference/response-codes.md) and `reqs=0` — such calls are never charged.
 
 ## Multi-request endpoints
 

@@ -11,6 +11,7 @@
 | 404 | Not Found | The account, comment, or media was not found. |
 | 405 | Method Not Allowed | This HTTP method is not allowed for HikerAPI. |
 | 408 | Request Timeout | The server waited too long and closed the connection. |
+| 410 | Gone | The endpoint is deprecated and retired (request fee is **not** charged). Use the alternative from the endpoint's docs. |
 | 422 | Unprocessable Entity | The server understands the request but cannot process it due to semantic errors. |
 | 429 | Too Many Requests | Your request was rejected due to exceeding the request limit. See [Rate Limits](../guides/rate-limits.md). |
 | 430 | Request Header Fields Too Large | Request header fields too large. |
@@ -19,4 +20,4 @@
 | 504 | Gateway Timeout | Network delays or server access problems (request fee is **not** charged). |
 
 !!! info "Billing note"
-    Errors 500, 503, and 504 are **not charged** — you only pay for successful requests.
+    Only `200`, `400`, `403` and `404` responses are charged — the API does the work even when the result is "not found" or "private". Everything else is free: deprecated endpoints respond with `410 Gone` and are never charged, and `50x` server errors are not charged either.
