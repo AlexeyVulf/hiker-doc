@@ -1937,7 +1937,7 @@ Returns clips metadata (audio/music/appreciation) for up to 10 medias
 
     ```bash
     curl -H "x-access-key: YOUR_TOKEN" \
-      "https://api.hikerapi.com/gql/media/clips_metadata?media_ids=3776832898280228145"
+      "https://api.hikerapi.com/gql/media/clips_metadata?media_ids=3977533085818745577"
     ```
 
 === "Python (requests)"
@@ -1948,7 +1948,7 @@ Returns clips metadata (audio/music/appreciation) for up to 10 medias
     response = requests.get(
         "https://api.hikerapi.com/gql/media/clips_metadata",
         headers={"x-access-key": "YOUR_TOKEN"},
-        params={"media_ids": "3776832898280228145"},
+        params={"media_ids": "3977533085818745577"},
     )
     print(response.json())
     ```
@@ -1957,7 +1957,7 @@ Returns clips metadata (audio/music/appreciation) for up to 10 medias
 
     ```javascript
     const response = await fetch(
-      "https://api.hikerapi.com/gql/media/clips_metadata?media_ids=3776832898280228145",
+      "https://api.hikerapi.com/gql/media/clips_metadata?media_ids=3977533085818745577",
       { headers: { "x-access-key": "YOUR_TOKEN" } }
     );
     const data = await response.json();
@@ -1986,8 +1986,8 @@ Returns clips metadata (audio/music/appreciation) for up to 10 medias
       {
         "node": {
           "__typename": "XDTMediaDict",
-          "strong_id__": "3776832898280228145_787132",
-          "id": "3776832898280228145_787132",
+          "strong_id__": "3977533085818745577_68012770661",
+          "id": "3977533085818745577_68012770661",
           "is_fulfilled__(name:\"XDTMediaDict\")": true
         }
       }
@@ -1996,8 +1996,8 @@ Returns clips metadata (audio/music/appreciation) for up to 10 medias
   "extensions": {
     "is_final": true,
     "server_metadata": {
-      "request_start_time_ms": 1788439981394,
-      "time_at_flush_ms": 1788439981554
+      "request_start_time_ms": 1788440041078,
+      "time_at_flush_ms": 1788440041234
     }
   },
   "status": "ok"

@@ -21,6 +21,7 @@ RICH_COMMENT_MEDIA_ID = "3864286541032633353"  # has comment replies
 RICH_COMMENT_ID = "18142813870496178"  # has replies
 RICH_COMMENT_LIKERS_MEDIA_ID = "18133609390533743"  # has comment likers
 RICH_HIGHLIGHTS_USER_ID = "51089230684"  # has highlights
+CLIP_MEDIA_ID = "3977533085818745577"  # natgeo reel, for clips_metadata
 STORY_URL = f"https://www.instagram.com/stories/{USER_USERNAME}/3776832898280228145/"  # noqa: E501
 SHARE_URL = f"https://www.instagram.com/p/{MEDIA_CODE}/"
 
@@ -131,7 +132,7 @@ ENDPOINT_PARAMS = {
     "/v2/media/by/url": {"url": MEDIA_URL},
     # Media — gql
     "/gql/media/usertags": {"media_ids": MEDIA_ID},
-    "/gql/media/clips_metadata": {"media_ids": MEDIA_ID},
+    "/gql/media/clips_metadata": {"media_ids": CLIP_MEDIA_ID},
     "/gql/media/likers": {"media_id": MEDIA_ID},
     "/gql/comments/chunk": {"media_id": MEDIA_ID},
     "/gql/comments/threaded/chunk": {
