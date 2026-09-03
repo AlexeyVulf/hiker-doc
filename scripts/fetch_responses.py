@@ -67,17 +67,21 @@ def _shorten_url(url):
         return url
 
 
-def clean_response(obj):
-    """Remove noisy fields and shorten URLs for docs."""
+def clean_response(obj, keep=frozenset()):
+    """Remove noisy fields and shorten URLs for docs.
+
+    ``keep`` — STRIP_FIELDS entries to preserve for this endpoint (e.g. the
+    clips_metadata endpoint exists to return ``clips_metadata``).
+    """
     if isinstance(obj, list):
-        return [clean_response(item) for item in obj]
+        return [clean_response(item, keep) for item in obj]
     if not isinstance(obj, dict):
         return obj
 
     cleaned = {}
     for key, value in obj.items():
         # Strip heavy/useless fields
-        if key in STRIP_FIELDS:
+        if key in STRIP_FIELDS and key not in keep:
             continue
 
         # Keep only first element in video/image versions
@@ -88,7 +92,7 @@ def clean_response(obj):
         if isinstance(value, str) and "cdninstagram.com" in value:
             value = _shorten_url(value)
 
-        cleaned[key] = clean_response(value)
+        cleaned[key] = clean_response(value, keep)
     return cleaned
 
 
@@ -182,7 +186,12 @@ def main():
                 continue
 
             data = truncate_arrays(data, max_items=3)
-            data = clean_response(data)
+            keep = (
+                {"clips_metadata"}
+                if endpoint_path == "/gql/media/clips_metadata"
+                else frozenset()
+            )
+            data = clean_response(data, keep)
             cache_file = EXAMPLES_DIR / path_to_filename(endpoint_path)
             cache_file.write_text(json.dumps(data, indent=2, ensure_ascii=False) + "\n")
             print(f"  OK    {endpoint_path} -> {cache_file.name}")

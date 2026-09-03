@@ -21,7 +21,9 @@ RICH_COMMENT_MEDIA_ID = "3864286541032633353"  # has comment replies
 RICH_COMMENT_ID = "18142813870496178"  # has replies
 RICH_COMMENT_LIKERS_MEDIA_ID = "18133609390533743"  # has comment likers
 RICH_HIGHLIGHTS_USER_ID = "51089230684"  # has highlights
-CLIP_MEDIA_ID = "3977533085818745577"  # natgeo reel, for clips_metadata
+CLIP_MEDIA_ID = (
+    "3973791230319739409"  # public reel with music, clean clips_metadata response
+)
 STORY_URL = f"https://www.instagram.com/stories/{USER_USERNAME}/3776832898280228145/"  # noqa: E501
 SHARE_URL = f"https://www.instagram.com/p/{MEDIA_CODE}/"
 

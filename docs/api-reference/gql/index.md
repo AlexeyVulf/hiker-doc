@@ -1937,7 +1937,7 @@ Returns clips metadata (audio/music/appreciation) for up to 10 medias
 
     ```bash
     curl -H "x-access-key: YOUR_TOKEN" \
-      "https://api.hikerapi.com/gql/media/clips_metadata?media_ids=3977533085818745577"
+      "https://api.hikerapi.com/gql/media/clips_metadata?media_ids=3973791230319739409"
     ```
 
 === "Python (requests)"
@@ -1948,7 +1948,7 @@ Returns clips metadata (audio/music/appreciation) for up to 10 medias
     response = requests.get(
         "https://api.hikerapi.com/gql/media/clips_metadata",
         headers={"x-access-key": "YOUR_TOKEN"},
-        params={"media_ids": "3977533085818745577"},
+        params={"media_ids": "3973791230319739409"},
     )
     print(response.json())
     ```
@@ -1957,7 +1957,7 @@ Returns clips metadata (audio/music/appreciation) for up to 10 medias
 
     ```javascript
     const response = await fetch(
-      "https://api.hikerapi.com/gql/media/clips_metadata?media_ids=3977533085818745577",
+      "https://api.hikerapi.com/gql/media/clips_metadata?media_ids=3973791230319739409",
       { headers: { "x-access-key": "YOUR_TOKEN" } }
     );
     const data = await response.json();
@@ -1968,17 +1968,6 @@ Returns clips metadata (audio/music/appreciation) for up to 10 medias
 
 ```json
 {
-  "errors": [
-    {
-      "message": "execution error",
-      "path": [
-        "1$multifetch__XDTMediaDict(ids:$media_ids)",
-        0,
-        "node"
-      ],
-      "severity": "UNSET"
-    }
-  ],
   "data": {
     "__typename": "Query",
     "strong_id__": null,
@@ -1986,9 +1975,49 @@ Returns clips metadata (audio/music/appreciation) for up to 10 medias
       {
         "node": {
           "__typename": "XDTMediaDict",
-          "strong_id__": "3977533085818745577_68012770661",
-          "id": "3977533085818745577_68012770661",
-          "is_fulfilled__(name:\"XDTMediaDict\")": true
+          "strong_id__": "3973791230319739409_5879465547",
+          "id": "3973791230319739409_5879465547",
+          "is_fulfilled__(name:\"XDTMediaDict\")": true,
+          "clips_metadata": {
+            "content_appreciation_info": {
+              "enabled": true,
+              "entry_point_container": {
+                "comment": {
+                  "action_type": "gifting"
+                },
+                "pill": {
+                  "action_type": "gifting",
+                  "priority": 1
+                }
+              }
+            },
+            "music_info": {
+              "music_asset_info": {
+                "audio_asset_id": "550901680308919",
+                "audio_cluster_id": "3359219667728116",
+                "cover_artwork_thumbnail_uri": "https://scontent-iad3-1.cdninstagram.com/...",
+                "cover_artwork_uri": "https://scontent-iad3-1.cdninstagram.com/...",
+                "display_artist": "Kevin MacLeod, Kevin",
+                "duration_in_ms": 125000,
+                "id": "550901680308919",
+                "title": "Monkeys Spinning Monkeys",
+                "allows_saving": false,
+                "is_explicit": false
+              },
+              "music_consumption_info": {
+                "audio_asset_start_time_in_ms": 1500,
+                "ig_artist": null,
+                "is_bookmarked": false,
+                "is_trending_in_clips": true,
+                "overlap_duration_in_ms": 60000,
+                "should_mute_audio": false,
+                "trend_rank": null,
+                "placeholder_profile_pic_url": "https://scontent-iad6-1.cdninstagram.com/...",
+                "should_mute_audio_reason": ""
+              }
+            },
+            "original_sound_info": null
+          }
         }
       }
     ]
@@ -1996,8 +2025,8 @@ Returns clips metadata (audio/music/appreciation) for up to 10 medias
   "extensions": {
     "is_final": true,
     "server_metadata": {
-      "request_start_time_ms": 1788440041078,
-      "time_at_flush_ms": 1788440041234
+      "request_start_time_ms": 1788440701521,
+      "time_at_flush_ms": 1788440701964
     }
   },
   "status": "ok"
