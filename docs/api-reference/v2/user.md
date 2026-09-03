@@ -2793,7 +2793,8 @@ Get part (one page) of following users. Returns a list of User objects.
 | Parameter | Type | Required | Description |
 |-----------|------|----------|-------------|
 | `user_id` | string | Yes | User Id |
-| `amount` | integer | No | Amount |
+| `amount` | integer | No | Deprecated and ignored. Use page_id / next_page_id to paginate. |
+| `page_id` | string | No | Use value of field `next_page_id` from response for getting next page |
 | `force` | boolean | No | Skip account privacy check |
 | `safe_int` | boolean | No | Convert all big integers to strings |
 
@@ -2802,6 +2803,7 @@ Get part (one page) of following users. Returns a list of User objects.
     ```bash
     curl -H "x-access-key: YOUR_TOKEN" \
       "https://api.hikerapi.com/v2/user/highlights?user_id=1114341851"
+    # Next page: add &page_id=... from previous response
     ```
 
 === "Python"
@@ -2811,6 +2813,7 @@ Get part (one page) of following users. Returns a list of User objects.
 
     cl = Client(token="YOUR_TOKEN")
     result = cl.user_highlights_v2(user_id="1114341851")
+    # Next page: cl.user_highlights_v2(user_id="1114341851", page_id="...")
     ```
 
 === "Python (requests)"
@@ -2823,6 +2826,7 @@ Get part (one page) of following users. Returns a list of User objects.
         headers={"x-access-key": "YOUR_TOKEN"},
         params={"user_id": "1114341851"},
     )
+    # Next page: add "page_id": "..." to params
     print(response.json())
     ```
 
@@ -2834,6 +2838,7 @@ Get part (one page) of following users. Returns a list of User objects.
       { headers: { "x-access-key": "YOUR_TOKEN" } }
     );
     const data = await response.json();
+    // Next page: add &page_id=... to URL
     ```
 
 <details>
@@ -3037,7 +3042,8 @@ Get part (one page) of following users. Returns a list of User objects.
 | Parameter | Type | Required | Description |
 |-----------|------|----------|-------------|
 | `username` | string | Yes | Username |
-| `amount` | integer | No | Amount |
+| `amount` | integer | No | Deprecated and ignored. Use page_id / next_page_id to paginate. |
+| `page_id` | string | No | Use value of field `next_page_id` from response for getting next page |
 | `force` | boolean | No | Skip account privacy check |
 | `safe_int` | boolean | No | Convert all big integers to strings |
 
@@ -3046,6 +3052,7 @@ Get part (one page) of following users. Returns a list of User objects.
     ```bash
     curl -H "x-access-key: YOUR_TOKEN" \
       "https://api.hikerapi.com/v2/user/highlights/by/username?username=nike"
+    # Next page: add &page_id=... from previous response
     ```
 
 === "Python"
@@ -3055,6 +3062,7 @@ Get part (one page) of following users. Returns a list of User objects.
 
     cl = Client(token="YOUR_TOKEN")
     result = cl.user_highlights_by_username_v2(username="nike")
+    # Next page: cl.user_highlights_by_username_v2(username="nike", page_id="...")
     ```
 
 === "Python (requests)"
@@ -3067,6 +3075,7 @@ Get part (one page) of following users. Returns a list of User objects.
         headers={"x-access-key": "YOUR_TOKEN"},
         params={"username": "nike"},
     )
+    # Next page: add "page_id": "..." to params
     print(response.json())
     ```
 
@@ -3078,6 +3087,7 @@ Get part (one page) of following users. Returns a list of User objects.
       { headers: { "x-access-key": "YOUR_TOKEN" } }
     );
     const data = await response.json();
+    // Next page: add &page_id=... to URL
     ```
 
 <details>

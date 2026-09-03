@@ -26,9 +26,13 @@
             "required": false,
             "schema": {
               "type": "integer",
+              "description": "Deprecated. Returns at most the first page; use /v2/user/highlights (page_id / next_page_id) to paginate.",
+              "deprecated": true,
               "default": 0,
               "title": "Amount"
-            }
+            },
+            "description": "Deprecated. Returns at most the first page; use /v2/user/highlights (page_id / next_page_id) to paginate.",
+            "deprecated": true
           },
           {
             "name": "force",
@@ -107,9 +111,13 @@
             "required": false,
             "schema": {
               "type": "integer",
+              "description": "Deprecated. Returns at most the first page; use /v2/user/highlights (page_id / next_page_id) to paginate.",
+              "deprecated": true,
               "default": 0,
               "title": "Amount"
-            }
+            },
+            "description": "Deprecated. Returns at most the first page; use /v2/user/highlights (page_id / next_page_id) to paginate.",
+            "deprecated": true
           },
           {
             "name": "force",

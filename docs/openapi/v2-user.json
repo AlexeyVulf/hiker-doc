@@ -840,9 +840,25 @@
             "required": false,
             "schema": {
               "type": "integer",
+              "description": "Deprecated and ignored. Use page_id / next_page_id to paginate.",
+              "deprecated": true,
               "default": 20,
               "title": "Amount"
-            }
+            },
+            "description": "Deprecated and ignored. Use page_id / next_page_id to paginate.",
+            "deprecated": true
+          },
+          {
+            "name": "page_id",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "description": "Use value of field `next_page_id` from response for getting next page",
+              "default": "",
+              "title": "Page Id"
+            },
+            "description": "Use value of field `next_page_id` from response for getting next page"
           },
           {
             "name": "force",
@@ -948,9 +964,25 @@
             "required": false,
             "schema": {
               "type": "integer",
+              "description": "Deprecated and ignored. Use page_id / next_page_id to paginate.",
+              "deprecated": true,
               "default": 20,
               "title": "Amount"
-            }
+            },
+            "description": "Deprecated and ignored. Use page_id / next_page_id to paginate.",
+            "deprecated": true
+          },
+          {
+            "name": "page_id",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "description": "Use value of field `next_page_id` from response for getting next page",
+              "default": "",
+              "title": "Page Id"
+            },
+            "description": "Use value of field `next_page_id` from response for getting next page"
           },
           {
             "name": "force",

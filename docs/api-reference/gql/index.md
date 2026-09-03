@@ -5,7 +5,7 @@ Instagram GraphQL endpoints with cursor-based pagination.
 !!! info "Authentication & errors"
     All endpoints require `x-access-key` header. See [Authentication](../../getting-started/authentication.md). Error responses: [Response Codes](../response-codes.md).
 
-**Endpoints:** [`/g1/user/followers`](#get-g1userfollowers) | [`/g1/user/following`](#get-g1userfollowing) | [`/g2/user/followers`](#get-g2userfollowers) | [`/g2/user/following`](#get-g2userfollowing) | [`/g2/user/medias`](#get-g2usermedias) | [`/gql/comment/likers/chunk`](#get-gqlcommentlikerschunk) | [`/gql/media/likers`](#get-gqlmedialikers) | [`/gql/media/usertags`](#get-gqlmediausertags) | [`/gql/topsearch`](#get-gqltopsearch) | [`/gql/user/about`](#get-gqluserabout) | [`/gql/user/clips`](#get-gqluserclips) | [`/gql/user/followers/chunk`](#get-gqluserfollowerschunk) | [`/gql/user/following/chunk`](#get-gqluserfollowingchunk) | [`/gql/user/medias`](#get-gqlusermedias) | [`/gql/user/reposts`](#get-gqluserreposts) | [`/gql/user/web_profile_info`](#get-gqluserweb_profile_info)
+**Endpoints:** [`/g1/user/followers`](#get-g1userfollowers) | [`/g1/user/following`](#get-g1userfollowing) | [`/g2/user/followers`](#get-g2userfollowers) | [`/g2/user/following`](#get-g2userfollowing) | [`/g2/user/medias`](#get-g2usermedias) | [`/gql/comment/likers/chunk`](#get-gqlcommentlikerschunk) | [`/gql/media/clips_metadata`](#get-gqlmediaclips_metadata) | [`/gql/media/likers`](#get-gqlmedialikers) | [`/gql/media/usertags`](#get-gqlmediausertags) | [`/gql/topsearch`](#get-gqltopsearch) | [`/gql/user/about`](#get-gqluserabout) | [`/gql/user/clips`](#get-gqluserclips) | [`/gql/user/followers/chunk`](#get-gqluserfollowerschunk) | [`/gql/user/following/chunk`](#get-gqluserfollowingchunk) | [`/gql/user/medias`](#get-gqlusermedias) | [`/gql/user/reposts`](#get-gqluserreposts) | [`/gql/user/web_profile_info`](#get-gqluserweb_profile_info)
 
 ---
 
@@ -1922,6 +1922,89 @@ Get likers on a comment
     const data = await response.json();
     // Next page: add &end_cursor=... to URL
     ```
+
+---
+
+### GET /gql/media/clips_metadata
+
+Returns clips metadata (audio/music/appreciation) for up to 10 medias
+
+| Parameter | Type | Required | Description |
+|-----------|------|----------|-------------|
+| `media_ids` | array | No | Media Ids |
+
+=== "curl"
+
+    ```bash
+    curl -H "x-access-key: YOUR_TOKEN" \
+      "https://api.hikerapi.com/gql/media/clips_metadata?media_ids=3776832898280228145"
+    ```
+
+=== "Python (requests)"
+
+    ```python
+    import requests
+
+    response = requests.get(
+        "https://api.hikerapi.com/gql/media/clips_metadata",
+        headers={"x-access-key": "YOUR_TOKEN"},
+        params={"media_ids": "3776832898280228145"},
+    )
+    print(response.json())
+    ```
+
+=== "JavaScript"
+
+    ```javascript
+    const response = await fetch(
+      "https://api.hikerapi.com/gql/media/clips_metadata?media_ids=3776832898280228145",
+      { headers: { "x-access-key": "YOUR_TOKEN" } }
+    );
+    const data = await response.json();
+    ```
+
+<details>
+<summary>Example response</summary>
+
+```json
+{
+  "errors": [
+    {
+      "message": "execution error",
+      "path": [
+        "1$multifetch__XDTMediaDict(ids:$media_ids)",
+        0,
+        "node"
+      ],
+      "severity": "UNSET"
+    }
+  ],
+  "data": {
+    "__typename": "Query",
+    "strong_id__": null,
+    "1$multifetch__XDTMediaDict(ids:$media_ids)": [
+      {
+        "node": {
+          "__typename": "XDTMediaDict",
+          "strong_id__": "3776832898280228145_787132",
+          "id": "3776832898280228145_787132",
+          "is_fulfilled__(name:\"XDTMediaDict\")": true
+        }
+      }
+    ]
+  },
+  "extensions": {
+    "is_final": true,
+    "server_metadata": {
+      "request_start_time_ms": 1788439981394,
+      "time_at_flush_ms": 1788439981554
+    }
+  },
+  "status": "ok"
+}
+```
+
+</details>
 
 ---
 

@@ -7,7 +7,8 @@
   "paths": {
     "/sys/balance": {
       "get": {
-        "summary": "Balance",
+        "summary": "Requests left and money on the account (free, not billed)",
+        "description": "Balance of your account: how many requests are left and how much money is on it.\n\n**The two values refresh at different rates:**\n\n* `requests` is **real time** — it goes down with every call you make.\n* `amount` is **settled once per hour** — spending is charged in whole\n  hours, a few minutes after the hour ends. Between charges `amount` looks\n  frozen even though you are spending. Top-ups are the exception: they\n  appear within seconds.\n\nSo use `requests` for quota checks and low-balance alerts, and `amount` for\naccounting. Calling this endpoint is free — it does not consume a request.",
         "operationId": "balance_sys_balance_get",
         "responses": {
           "200": {

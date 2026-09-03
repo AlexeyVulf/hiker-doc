@@ -8,7 +8,7 @@
             "name": "Pricing",
             "url": "https://hikerapi.com/pricing"
         },
-        "version": "1.8.0"
+        "version": "1.8.1"
     },
     "paths": {
         "/v2/fbsearch/topsearch": {
@@ -1955,9 +1955,25 @@
                         "required": false,
                         "schema": {
                             "type": "integer",
+                            "description": "Deprecated and ignored. Use page_id / next_page_id to paginate.",
+                            "deprecated": true,
                             "default": 20,
                             "title": "Amount"
-                        }
+                        },
+                        "description": "Deprecated and ignored. Use page_id / next_page_id to paginate.",
+                        "deprecated": true
+                    },
+                    {
+                        "name": "page_id",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string",
+                            "description": "Use value of field `next_page_id` from response for getting next page",
+                            "default": "",
+                            "title": "Page Id"
+                        },
+                        "description": "Use value of field `next_page_id` from response for getting next page"
                     },
                     {
                         "name": "force",
@@ -2075,9 +2091,25 @@
                         "required": false,
                         "schema": {
                             "type": "integer",
+                            "description": "Deprecated and ignored. Use page_id / next_page_id to paginate.",
+                            "deprecated": true,
                             "default": 20,
                             "title": "Amount"
-                        }
+                        },
+                        "description": "Deprecated and ignored. Use page_id / next_page_id to paginate.",
+                        "deprecated": true
+                    },
+                    {
+                        "name": "page_id",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string",
+                            "description": "Use value of field `next_page_id` from response for getting next page",
+                            "default": "",
+                            "title": "Page Id"
+                        },
+                        "description": "Use value of field `next_page_id` from response for getting next page"
                     },
                     {
                         "name": "force",
@@ -3767,9 +3799,13 @@
                         "required": false,
                         "schema": {
                             "type": "integer",
+                            "description": "Deprecated. Returns at most the first page; use /v2/user/highlights (page_id / next_page_id) to paginate.",
+                            "deprecated": true,
                             "default": 0,
                             "title": "Amount"
-                        }
+                        },
+                        "description": "Deprecated. Returns at most the first page; use /v2/user/highlights (page_id / next_page_id) to paginate.",
+                        "deprecated": true
                     },
                     {
                         "name": "force",
@@ -3860,9 +3896,13 @@
                         "required": false,
                         "schema": {
                             "type": "integer",
+                            "description": "Deprecated. Returns at most the first page; use /v2/user/highlights (page_id / next_page_id) to paginate.",
+                            "deprecated": true,
                             "default": 0,
                             "title": "Amount"
-                        }
+                        },
+                        "description": "Deprecated. Returns at most the first page; use /v2/user/highlights (page_id / next_page_id) to paginate.",
+                        "deprecated": true
                     },
                     {
                         "name": "force",
@@ -4635,7 +4675,7 @@
                 "tags": [
                     "Post Details"
                 ],
-                "summary": "Returns 200 for found posts and 404 for unavailable or deleted posts. Other responses are not provided. Doesn't return usertags for video. Attention! Use with https://ins...ram.com/p/CA2aJYrg6cZ/. Note: promoted/ad posts (product_type=ad) may return 404 \u2014 use /v1/media/by/url instead for those.",
+                "summary": "Returns 200 for found posts, 404 for unavailable or deleted posts and 400 for malformed URLs (story/share/audio links, numeric IDs, template placeholders) with a hint to the right endpoint. Doesn't return usertags for video. Attention! Use with https://ins...ram.com/p/CA2aJYrg6cZ/. Note: promoted/ad posts (product_type=ad) may return 404 \u2014 use /v1/media/by/url instead for those.",
                 "description": "Get media object",
                 "operationId": "media_info_by_url_v2_media_info_by_url_get",
                 "security": [
@@ -5431,6 +5471,66 @@
                 "required": false
             }
         },
+        "/gql/media/clips_metadata": {
+            "get": {
+                "tags": [
+                    "Post Details"
+                ],
+                "summary": "Returns clips metadata for the given medias: original sound info (audio_asset_id, duration_in_ms, ig_artist, consumption_info), music_info and content appreciation (gifts) state. Batch endpoint \u2014 you can pass up to 10 media ids",
+                "description": "Returns clips metadata (audio/music/appreciation) for up to 10 medias",
+                "operationId": "graphql_query_getfulldatacontentappreciationquery_chapi_gql_media_clips_metadata_get",
+                "security": [
+                    {
+                        "APIKeyHeader": []
+                    }
+                ],
+                "parameters": [
+                    {
+                        "name": "media_ids",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            },
+                            "title": "Media Ids"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful Response",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Not found"
+                    },
+                    "422": {
+                        "description": "Validation Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/HTTPValidationError"
+                                }
+                            }
+                        }
+                    }
+                },
+                "x-codeSamples": [
+                    {
+                        "lang": "Python",
+                        "source": "from hikerapi import Client\n\ncl = Client(<ACCESS_KEY>)\nres = await cl.media_clips_metadata_gql(media_ids=[\"3162273595027945978_1903471\"])\n",
+                        "label": "Python"
+                    }
+                ],
+                "required": false
+            }
+        },
         "/v1/media/by/id": {
             "get": {
                 "tags": [
@@ -5723,6 +5823,70 @@
                     {
                         "lang": "Python",
                         "source": "from hikerapi import Client\n\ncl = Client(<ACCESS_KEY>)\nres = await cl.media_user_v1(media_id=\"3162273595027945978\")\n",
+                        "label": "Python"
+                    }
+                ],
+                "required": false
+            }
+        },
+        "/v2/media/comments/infos": {
+            "get": {
+                "tags": [
+                    "Post Details"
+                ],
+                "summary": "Returns comment metadata for several medias in one request: comment_count, has_more_comments, comment_threading_enabled, comment_likes_enabled and preview_comments. Use this instead of /v2/media/comments when you only need counts. Batch endpoint \u2014 you can pass up to 10 media ids",
+                "description": "Get comment counts and preview comments for up to 10 medias",
+                "operationId": "media_comment_infos_v2_media_comments_infos_get",
+                "security": [
+                    {
+                        "APIKeyHeader": []
+                    }
+                ],
+                "parameters": [
+                    {
+                        "name": "media_ids",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            },
+                            "title": "Media Ids"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful Response",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "additionalProperties": true,
+                                    "title": "Response Media Comment Infos V2 Media Comments Infos Get"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Not found"
+                    },
+                    "422": {
+                        "description": "Validation Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/HTTPValidationError"
+                                }
+                            }
+                        }
+                    }
+                },
+                "x-codeSamples": [
+                    {
+                        "lang": "Python",
+                        "source": "from hikerapi import Client\n\ncl = Client(<ACCESS_KEY>)\nres = await cl.media_comment_infos_v2(\n    media_ids=[\"2588864825828721736_1903471\"]\n)\n",
                         "label": "Python"
                     }
                 ],
@@ -9226,7 +9390,8 @@
                 "tags": [
                     "System"
                 ],
-                "summary": "Balance",
+                "summary": "Requests left and money on the account (free, not billed)",
+                "description": "Balance of your account: how many requests are left and how much money is on it.\n\n**The two values refresh at different rates:**\n\n* `requests` is **real time** \u2014 it goes down with every call you make.\n* `amount` is **settled once per hour** \u2014 spending is charged in whole\n  hours, a few minutes after the hour ends. Between charges `amount` looks\n  frozen even though you are spending. Top-ups are the exception: they\n  appear within seconds.\n\nSo use `requests` for quota checks and low-balance alerts, and `amount` for\naccounting. Calling this endpoint is free \u2014 it does not consume a request.",
                 "operationId": "balance_sys_balance_get",
                 "responses": {
                     "200": {
@@ -9234,9 +9399,7 @@
                         "content": {
                             "application/json": {
                                 "schema": {
-                                    "additionalProperties": true,
-                                    "type": "object",
-                                    "title": "Response Balance Sys Balance Get"
+                                    "$ref": "#/components/schemas/Balance"
                                 }
                             }
                         }
@@ -12887,6 +13050,50 @@
                 },
                 "type": "object",
                 "title": "About"
+            },
+            "Balance": {
+                "properties": {
+                    "requests": {
+                        "type": "integer",
+                        "title": "Requests",
+                        "description": "How many requests are **left** on the account \u2014 not the number you have already made. Real time: every call is deducted the moment it arrives, and calls we do not bill (429, 5xx, service unavailable) are refunded to the counter right away.",
+                        "examples": [
+                            129627
+                        ]
+                    },
+                    "rate": {
+                        "type": "integer",
+                        "title": "Rate",
+                        "description": "Rate limit of your account, requests per second.",
+                        "examples": [
+                            11
+                        ]
+                    },
+                    "currency": {
+                        "type": "string",
+                        "title": "Currency",
+                        "description": "Currency of `amount`.",
+                        "examples": [
+                            "USD"
+                        ]
+                    },
+                    "amount": {
+                        "type": "number",
+                        "title": "Amount",
+                        "description": "Money left on the account. **Updated once per hour**: usage is charged in whole hours, a few minutes after the hour closes, so between two charges this value does not move while you keep spending. Top-ups are applied within seconds. Reported as `0.0` once `requests` reaches 0.",
+                        "examples": [
+                            2592.5777
+                        ]
+                    }
+                },
+                "type": "object",
+                "required": [
+                    "requests",
+                    "rate",
+                    "currency",
+                    "amount"
+                ],
+                "title": "Balance"
             },
             "Comment": {
                 "properties": {

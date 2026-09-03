@@ -11,7 +11,18 @@ Account balance and rate limit info.
 
 ### GET /sys/balance
 
-Balance
+Balance of your account: how many requests are left and how much money is on it.
+
+**The two values refresh at different rates:**
+
+* `requests` is **real time** — it goes down with every call you make.
+* `amount` is **settled once per hour** — spending is charged in whole
+  hours, a few minutes after the hour ends. Between charges `amount` looks
+  frozen even though you are spending. Top-ups are the exception: they
+  appear within seconds.
+
+So use `requests` for quota checks and low-balance alerts, and `amount` for
+accounting. Calling this endpoint is free — it does not consume a request.
 
 === "curl"
 

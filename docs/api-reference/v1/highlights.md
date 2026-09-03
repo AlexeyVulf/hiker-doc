@@ -199,7 +199,7 @@ Get highlight object by id. Returns a Highlight object.
 | Parameter | Type | Required | Description |
 |-----------|------|----------|-------------|
 | `user_id` | string | Yes | User Id |
-| `amount` | integer | No | Amount |
+| `amount` | integer | No | Deprecated. Returns at most the first page; use /v2/user/highlights (page_id / next_page_id) to paginate. |
 | `force` | boolean | No | Skip account privacy check |
 
 === "curl"
@@ -359,7 +359,7 @@ Get highlight object by id. Returns a Highlight object.
 | Parameter | Type | Required | Description |
 |-----------|------|----------|-------------|
 | `username` | string | Yes | Username |
-| `amount` | integer | No | Amount |
+| `amount` | integer | No | Deprecated. Returns at most the first page; use /v2/user/highlights (page_id / next_page_id) to paginate. |
 | `force` | boolean | No | Skip account privacy check |
 
 === "curl"

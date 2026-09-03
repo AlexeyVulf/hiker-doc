@@ -5,7 +5,7 @@ Get posts, comments, and media details.
 !!! info "Authentication & errors"
     All endpoints require `x-access-key` header. See [Authentication](../../getting-started/authentication.md). Error responses: [Response Codes](../response-codes.md).
 
-**Endpoints:** [`/v2/media/comment/offensive`](#get-v2mediacommentoffensive) | [`/v2/media/comments`](#get-v2mediacomments) | [`/v2/media/comments/replies`](#get-v2mediacommentsreplies) | [`/v2/media/info/by/code`](#get-v2mediainfobycode) | [`/v2/media/info/by/id`](#get-v2mediainfobyid) | [`/v2/media/info/by/url`](#get-v2mediainfobyurl) | [`/v2/media/likers`](#get-v2medialikers) | [`/v2/media/template`](#get-v2mediatemplate)
+**Endpoints:** [`/v2/media/comment/offensive`](#get-v2mediacommentoffensive) | [`/v2/media/comments`](#get-v2mediacomments) | [`/v2/media/comments/infos`](#get-v2mediacommentsinfos) | [`/v2/media/comments/replies`](#get-v2mediacommentsreplies) | [`/v2/media/info/by/code`](#get-v2mediainfobycode) | [`/v2/media/info/by/id`](#get-v2mediainfobyid) | [`/v2/media/info/by/url`](#get-v2mediainfobyurl) | [`/v2/media/likers`](#get-v2medialikers) | [`/v2/media/template`](#get-v2mediatemplate)
 
 ---
 
@@ -1061,6 +1061,68 @@ Get comments on a media. Returns a list of Comment objects.
     "status": "ok"
   },
   "next_page_id": "IntcImNhY2hlZF9jb21tZW50c19jdXJzb3JcIjpcIjE3OTA2MjU3MTg4MjE2MDg1XCIsXCJiaWZpbHRlcl90b2tlblwiOlwiR2dZWWVRQlg0dl9CbWNzX0FHZmktb1FQakQ4QU84QkdIZ2VPUUFBUmRSX0gtTnNfQUJuOFM1M0J3ejhBNjN2TkVJZGlRQUJKMzUzODhqZEFBTzBjX2NYNmtUOEExR1JsRVdNdVFBQUVkSDd5NkpvX0FHaHZVUWRpaVQ4QVNPRzdqdHFSUHdBYW53aHhoX2NfQUxPeThYQk5YMEFBaGVORXBDU2FQd0FBXCJ9Ig=="
+}
+```
+
+</details>
+
+---
+
+### GET /v2/media/comments/infos
+
+Get comment counts and preview comments for up to 10 medias. Returns a list of Comment objects.
+
+| Parameter | Type | Required | Description |
+|-----------|------|----------|-------------|
+| `media_ids` | array | No | Media Ids |
+
+=== "curl"
+
+    ```bash
+    curl -H "x-access-key: YOUR_TOKEN" \
+      "https://api.hikerapi.com/v2/media/comments/infos?media_ids=3691011991037807194"
+    ```
+
+=== "Python (requests)"
+
+    ```python
+    import requests
+
+    response = requests.get(
+        "https://api.hikerapi.com/v2/media/comments/infos",
+        headers={"x-access-key": "YOUR_TOKEN"},
+        params={"media_ids": "3691011991037807194"},
+    )
+    print(response.json())
+    ```
+
+=== "JavaScript"
+
+    ```javascript
+    const response = await fetch(
+      "https://api.hikerapi.com/v2/media/comments/infos?media_ids=3691011991037807194",
+      { headers: { "x-access-key": "YOUR_TOKEN" } }
+    );
+    const data = await response.json();
+    ```
+
+<details>
+<summary>Example response</summary>
+
+```json
+{
+  "3691011991037807194_11255113": {
+    "strong_id__": "3691011991037807194_11255113",
+    "id": "3691011991037807194_11255113",
+    "comment_threading_enabled": true,
+    "comment_likes_enabled": true,
+    "max_num_visible_preview_comments": 2,
+    "has_more_comments": true,
+    "preview_comments": [],
+    "comment_count": 551,
+    "can_view_more_preview_comments": false,
+    "hide_view_all_comment_entrypoint": true
+  }
 }
 ```
 

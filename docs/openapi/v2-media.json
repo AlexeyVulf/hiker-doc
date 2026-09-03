@@ -362,7 +362,7 @@
     },
     "/v2/media/info/by/url": {
       "get": {
-        "summary": "Returns 200 for found posts and 404 for unavailable or deleted posts. Other responses are not provided. Doesn't return usertags for video. Attention! Use with https://ins...ram.com/p/CA2aJYrg6cZ/. Note: promoted/ad posts (product_type=ad) may return 404 — use /v1/media/by/url instead for those.",
+        "summary": "Returns 200 for found posts, 404 for unavailable or deleted posts and 400 for malformed URLs (story/share/audio links, numeric IDs, template placeholders) with a hint to the right endpoint. Doesn't return usertags for video. Attention! Use with https://ins...ram.com/p/CA2aJYrg6cZ/. Note: promoted/ad posts (product_type=ad) may return 404 — use /v1/media/by/url instead for those.",
         "description": "Get media object",
         "operationId": "media_info_by_url_v2_media_info_by_url_get",
         "parameters": [
@@ -713,6 +713,59 @@
           {
             "lang": "Python",
             "source": "from hikerapi import Client\n\ncl = Client(<ACCESS_KEY>)\nres = await cl.media_template_v2(id=\"2934927996541863400\")\n",
+            "label": "Python"
+          }
+        ],
+        "required": false
+      }
+    },
+    "/v2/media/comments/infos": {
+      "get": {
+        "summary": "Returns comment metadata for several medias in one request: comment_count, has_more_comments, comment_threading_enabled, comment_likes_enabled and preview_comments. Use this instead of /v2/media/comments when you only need counts. Batch endpoint — you can pass up to 10 media ids",
+        "description": "Get comment counts and preview comments for up to 10 medias. Returns a list of Comment objects.",
+        "operationId": "media_comment_infos_v2_media_comments_infos_get",
+        "parameters": [
+          {
+            "name": "media_ids",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              },
+              "title": "Media Ids"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "additionalProperties": true,
+                  "title": "Response Media Comment Infos V2 Media Comments Infos Get"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        },
+        "x-codeSamples": [
+          {
+            "lang": "Python",
+            "source": "from hikerapi import Client\n\ncl = Client(<ACCESS_KEY>)\nres = await cl.media_comment_infos_v2(\n    media_ids=[\"2588864825828721736_1903471\"]\n)\n",
             "label": "Python"
           }
         ],

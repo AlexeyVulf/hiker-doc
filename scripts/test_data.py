@@ -114,6 +114,7 @@ ENDPOINT_PARAMS = {
     "/v2/media/info/by/code": {"code": MEDIA_CODE},
     "/v2/media/info/by/url": {"url": MEDIA_URL},
     "/v2/media/comments": {"id": RICH_MEDIA_ID},
+    "/v2/media/comments/infos": {"media_ids": RICH_MEDIA_ID},
     "/v2/media/comments/replies": {
         "media_id": RICH_COMMENT_MEDIA_ID,
         "comment_id": RICH_COMMENT_ID,
@@ -130,6 +131,7 @@ ENDPOINT_PARAMS = {
     "/v2/media/by/url": {"url": MEDIA_URL},
     # Media — gql
     "/gql/media/usertags": {"media_ids": MEDIA_ID},
+    "/gql/media/clips_metadata": {"media_ids": MEDIA_ID},
     "/gql/media/likers": {"media_id": MEDIA_ID},
     "/gql/comments/chunk": {"media_id": MEDIA_ID},
     "/gql/comments/threaded/chunk": {

@@ -1091,6 +1091,55 @@
         "required": false
       }
     },
+    "/gql/media/clips_metadata": {
+      "get": {
+        "summary": "Returns clips metadata for the given medias: original sound info (audio_asset_id, duration_in_ms, ig_artist, consumption_info), music_info and content appreciation (gifts) state. Batch endpoint — you can pass up to 10 media ids",
+        "description": "Returns clips metadata (audio/music/appreciation) for up to 10 medias",
+        "operationId": "graphql_query_getfulldatacontentappreciationquery_chapi_gql_media_clips_metadata_get",
+        "parameters": [
+          {
+            "name": "media_ids",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              },
+              "title": "Media Ids"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        },
+        "x-codeSamples": [
+          {
+            "lang": "Python",
+            "source": "from hikerapi import Client\n\ncl = Client(<ACCESS_KEY>)\nres = await cl.media_clips_metadata_gql(media_ids=[\"3162273595027945978_1903471\"])\n",
+            "label": "Python"
+          }
+        ],
+        "required": false
+      }
+    },
     "/gql/comment/likers/chunk": {
       "get": {
         "summary": "Comment Likers Chunk",
